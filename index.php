@@ -7,10 +7,9 @@ require __DIR__ . '/vendor/autoload.php';
 $dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . "/../");
 $dotenv->load();
 
-$_SESSION["mac"]=$_POST['mac'];
-$_SESSION["ip"]=$_POST['ip'];
-$_SESSION["linkorig"]=$_POST['link-orig'];
-$_SESSION["linkloginonly"]=$_POST['link-login-only'];
+$_SESSION["id"]=$_GET['id'];
+$_SESSION["ap"]=$_GET['ap'];
+
 
 $_SESSION["user_type"] = "new";
 $_SESSION["method"] = "Form";
