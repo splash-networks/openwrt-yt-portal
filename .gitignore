@@ -1,0 +1,5 @@
+parameters.php
+composer.lock
+composer.phar
+vendor/
+*.html

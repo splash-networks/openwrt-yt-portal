@@ -1,0 +1,11 @@
+<?php
+
+#MySQL DB table name for this site
+
+$table_name = "";
+
+#Facebook Callback URL
+
+$callBackUrl = "";
+
+?>
