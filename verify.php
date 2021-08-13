@@ -1,6 +1,8 @@
 <?php error_reporting(E_ALL ^ E_NOTICE); 
 session_start();
 
+include 'parameters.php';
+
 /*
 This page sends the API request to Twilio to send SMS to user's provided number, and the user is given is asked to
 enter code received on their phone. Some basic error handling is also given using the Javascript function
@@ -31,7 +33,7 @@ $verification = $twilio->verify->v2->services($serviceid)
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Astiisb WiFi</title>
+  <title><?php echo htmlspecialchars($business_name);?> WiFi</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <link rel="stylesheet" href="bulma.min.css" />
   <script defer src="vendor\fortawesome\font-awesome\js\all.js"></script>
@@ -70,8 +72,8 @@ $verification = $twilio->verify->v2->services($serviceid)
 
     </form>
 
-    <div id="powered_verify" class="content is-size-6">Powered by Astiisb</div>
-    <div id="copyright" class="content is-size-6">(C) Copyright 2020</div>
+    <div id="powered" class="content is-size-6">Powered by <?php echo htmlspecialchars($business_name);?></div>
+    <div id="copyright" class="content is-size-6">(C) Copyright <?php echo htmlspecialchars($current_year);?></div>
 
   </div>
 

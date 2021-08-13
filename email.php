@@ -23,7 +23,7 @@ $loginUrl    = $helper->getLoginUrl($callBackUrl,$scope);
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Astiisb WiFi</title>
+  <title><?php echo htmlspecialchars($business_name);?> WiFi</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <link rel="stylesheet" href="bulma.min.css" />
   <link rel="stylesheet" href="font-awesome\css\font-awesome.min.css" />
@@ -84,8 +84,9 @@ $loginUrl    = $helper->getLoginUrl($callBackUrl,$scope);
     </div>
     <br>
 
-    <div id="powered_mikrotik" class="content is-size-6">Powered by Astiisb</div>
-    <div id="copyright" class="content is-size-6">(C) Copyright 2020</div>
+    <div id="powered" class="content is-size-6">Powered by <?php echo htmlspecialchars($business_name);?></div>
+    <div id="copyright" class="content is-size-6">(C) Copyright <?php echo htmlspecialchars($current_year);?></div>
+
 
   </div>
 
