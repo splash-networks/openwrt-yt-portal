@@ -8,4 +8,8 @@ $table_name = "";
 
 $callBackUrl = "";
 
+#Unifi Site ID for this site
+
+$site_id = "";
+
 ?>
