@@ -3,16 +3,13 @@ session_start();
 
 include 'parameters.php';
 
-$mac = $_SESSION["mac"];
-$ip = $_SESSION["ip"];
-$linkorig = "https://portal.astiisb.com/thankyou.htm";
-$linkloginonly = $_SESSION["linkloginonly"];
+$mac=$_SESSION["id"];
+$ap=$_SESSION["ap"];
 $method = $_SESSION["method"];
 $phone = $_SESSION['phone'];
 
 $last_updated = date("Y-m-d H:i:s");
 
-$username="admin";
 /*
 Collecting the data entered by users of type "new" or "repeat_old" in form. It will be posted to the DB.
 For "repeat_recent" type users no change will be made in the DB, they'll be authorized directly
@@ -22,6 +19,12 @@ require __DIR__ . '/vendor/autoload.php';
 
 $dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . "/../");
 $dotenv->load();
+
+$controlleruser = $_SERVER['CONTROLLER_USER'];
+$controllerpassword = $_SERVER['CONTROLLER_PASSWORD'];
+$controllerurl = $_SERVER['CONTROLLER_URL'];
+$controllerversion = $_SERVER['CONTROLLER_VERSION'];
+$duration = $_SERVER['DURATION'];
 
 $host_ip = $_SERVER['HOST_IP'];
 $db_user = $_SERVER['DB_USER'];
