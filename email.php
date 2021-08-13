@@ -76,12 +76,13 @@ $loginUrl    = $helper->getLoginUrl($callBackUrl,$scope);
       </div>
                         
     </form>
-
+    <!--
     <div id="logintext" class="content is-size-6">Or login using:</div>
     
     <div id="social">
       <a href="<?php echo htmlspecialchars($loginUrl);?>" class="facebookBtn smGlobalBtn"></a>
     </div>
+    -->
     <br>
 
     <div id="powered" class="content is-size-6">Powered by <?php echo htmlspecialchars($business_name);?></div>
