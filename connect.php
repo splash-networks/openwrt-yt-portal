@@ -26,6 +26,14 @@ $controllerurl = $_SERVER['CONTROLLER_URL'];
 $controllerversion = $_SERVER['CONTROLLER_VERSION'];
 $duration = $_SERVER['DURATION'];
 
+$debug = false;
+
+$unifi_connection = new UniFi_API\Client($controlleruser, $controllerpassword, $controllerurl, $site_id, $controllerversion);
+$set_debug_mode   = $unifi_connection->set_debug($debug);
+$loginresults     = $unifi_connection->login();
+
+$auth_result = $unifi_connection->authorize_guest($mac, $duration, null, null, null, $ap);
+
 $host_ip = $_SERVER['HOST_IP'];
 $db_user = $_SERVER['DB_USER'];
 $db_pass = $_SERVER['DB_PASS'];
