@@ -47,7 +47,7 @@ $loginUrl    = $helper->getLoginUrl($callBackUrl,$scope);
 
     <div id="login" class="content is-size-4 has-text-centered has-text-weight-bold">Login for Free Wi-Fi</div>
 
-    <form class="form_login" method="post" action="connect.php">
+    <form method="post" action="connect.php">
       <br>
       
       <div class="field">
@@ -77,9 +77,10 @@ $loginUrl    = $helper->getLoginUrl($callBackUrl,$scope);
         </div>
       </div>
       
-      <div class="control">
+        <div class="buttons is-centered">
         <button id="button_font" class="button is-danger">Continue</button>
       </div>
+
                         
     </form>
     <!--
@@ -94,8 +95,8 @@ $loginUrl    = $helper->getLoginUrl($callBackUrl,$scope);
     </div>
 
     <div class="foot">
-      <div id="powered" class="content has-text-centered is-size-6">Powered by <?php echo htmlspecialchars($business_name);?></div>
-      <div id="copyright" class="content has-text-centered is-size-6">(C) Copyright <?php echo htmlspecialchars($current_year);?></div>
+      <div id="margin_zero" class="content has-text-centered is-size-6">Powered by <?php echo htmlspecialchars($business_name);?></div>
+      <div id="margin_zero" class="content has-text-centered is-size-6">(C) Copyright <?php echo htmlspecialchars($current_year);?></div>
       </div>
   </div>
 

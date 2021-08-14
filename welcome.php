@@ -33,16 +33,16 @@ Printing a welcome message for the user
       <seection class="section">
       <div class="container">
 
-		<div id="devices" class="content is-size-6">Welcome, <?php echo htmlspecialchars($_SESSION["fname"]);?>!</div>
-		<div id="devices" class="content is-size-6">You'll be automatically authorized</div>
-		<div id="devices" class="content is-size-6">on the network in a few moments</div>
+		<div id="margin_zero" class="content is-size-6">Welcome, <?php echo htmlspecialchars($_SESSION["fname"]);?>!</div>
+		<div id="margin_zero" class="content is-size-6">You'll be automatically authorized</div>
+		<div id="margin_zero" class="content is-size-6">on the network in a few moments</div>
     </div>
     </seection>
     </div>
     
     <div class="foot">
-      <div id="powered" class="content has-text-centered is-size-6">Powered by <?php echo htmlspecialchars($business_name);?></div>
-      <div id="copyright" class="content has-text-centered is-size-6">(C) Copyright <?php echo htmlspecialchars($current_year);?></div>
+      <div id="margin_zero" class="content has-text-centered is-size-6">Powered by <?php echo htmlspecialchars($business_name);?></div>
+      <div id="margin_zero" class="content has-text-centered is-size-6">(C) Copyright <?php echo htmlspecialchars($current_year);?></div>
       </div>
   </div>
 </body>

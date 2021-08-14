@@ -30,15 +30,15 @@ include 'parameters.php';
 
     <div class="main">
       <seection class="section">
-        <div id="result" class="content has-text-centered is-size-6">Great! Your code has been approved!</div>
-        <div id="devices" class="content has-text-centered is-size-6">You'll be automatically redirected</div>
-        <div id="devices" class="content has-text-centered is-size-6">in a few moments</div>
+        <div id="margin_zero" class="content has-text-centered is-size-6">Great! Your code has been approved!</div>
+        <div id="margin_zero" class="content has-text-centered is-size-6">You'll be automatically redirected</div>
+        <div id="margin_zero" class="content has-text-centered is-size-6">in a few moments</div>
       </seection>
     </div>
 
     <div class="foot">
-      <div id="powered" class="content has-text-centered is-size-6">Powered by <?php echo htmlspecialchars($business_name);?></div>
-      <div id="copyright" class="content has-text-centered is-size-6">(C) Copyright <?php echo htmlspecialchars($current_year);?></div>
+      <div id="margin_zero" class="content has-text-centered is-size-6">Powered by <?php echo htmlspecialchars($business_name);?></div>
+      <div id="margin_zero" class="content has-text-centered is-size-6">(C) Copyright <?php echo htmlspecialchars($current_year);?></div>
     </div>
   </div>
 

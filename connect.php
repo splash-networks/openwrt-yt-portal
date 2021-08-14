@@ -128,15 +128,15 @@ mysqli_close($con);
 <div class="main">
       <seection class="section">
 
-		<div id="handle" class="content has-text-centered is-size-6">Please wait, you are being </div>
-		<div id="devices" class="content has-text-centered is-size-6">authorized on WiFi</div>
+		<div id="margin_zero" class="content has-text-centered is-size-6">Please wait, you are being </div>
+		<div id="margin_zero" class="content has-text-centered is-size-6">authorized on WiFi</div>
 
     </seection>
     </div>
 
     <div class="foot">
-      <div id="powered" class="content has-text-centered is-size-6">Powered by <?php echo htmlspecialchars($business_name);?></div>
-      <div id="copyright" class="content has-text-centered is-size-6">(C) Copyright <?php echo htmlspecialchars($current_year);?></div>
+      <div id="margin_zero" class="content has-text-centered is-size-6">Powered by <?php echo htmlspecialchars($business_name);?></div>
+      <div id="margin_zero" class="content has-text-centered is-size-6">(C) Copyright <?php echo htmlspecialchars($current_year);?></div>
       </div>
   </div>
 

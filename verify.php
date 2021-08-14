@@ -29,6 +29,7 @@ $verification = $twilio->verify->v2->services($serviceid)
                                    ->verifications
                                    ->create($_SESSION['phone'], "sms");
 ?>
+
 <!doctype html>
 <html>
 <head>
@@ -54,10 +55,10 @@ $verification = $twilio->verify->v2->services($serviceid)
 <div class="main">
       <seection class="section">
 
-    <form class="wifi_form" method="post" action="result.php" onsubmit="return codeCheck()">
+    <form method="post" action="result.php" onsubmit="return codeCheck()">
 
-      <div id="devices" class="content has-text-centered is-size-6">Please enter the 6 digit code</div>
-      <div id="devices" class="content has-text-centered is-size-6">received on your provided number</div>
+      <div id="margin_zero" class="content has-text-centered is-size-6">Please enter the 6 digit code</div>
+      <div id="margin_zero" class="content has-text-centered is-size-6">received on your provided number</div>
 
       <div id="gap" class="content is-size-6"></div>
 
@@ -72,7 +73,7 @@ $verification = $twilio->verify->v2->services($serviceid)
 
       <p class="help is-warning" id="codeError">Code Invalid: not a 6 digit number</p>
       
-      <div class="control">
+      <div class="buttons is-centered">
         <button id="button_font" class="button is-danger">Verify</button>
       </div>
 
@@ -82,8 +83,8 @@ $verification = $twilio->verify->v2->services($serviceid)
     </div>
 
     <div class="foot">
-      <div id="powered" class="content has-text-centered is-size-6">Powered by <?php echo htmlspecialchars($business_name);?></div>
-      <div id="copyright" class="content has-text-centered is-size-6">(C) Copyright <?php echo htmlspecialchars($current_year);?></div>
+      <div id="margin_zero" class="content has-text-centered is-size-6">Powered by <?php echo htmlspecialchars($business_name);?></div>
+      <div id="margin_zero" class="content has-text-centered is-size-6">(C) Copyright <?php echo htmlspecialchars($current_year);?></div>
       </div>
   </div>
 

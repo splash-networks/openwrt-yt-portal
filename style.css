@@ -2,297 +2,188 @@
     *{ border: 1px solid red; }
 */
 
-    .page {
-        height: 100vh; /* Use vh as a fallback for browsers that do not support Custom Properties */
-        height: calc(var(--vh, 1vh) * 100);
-        margin: 0 auto;
-        max-width: 100%;
-      }
-
-
-      .head {
-        display: flex;
-        height: 20%;
-        flex-wrap: wrap;
-    flex-direction: column;
-    align-items: center;
-      }
-    
-      .main {
-        display: flex;
-        height: 60%;
-        flex-wrap: wrap;
-    flex-direction: column;
-    align-items: center;
-      }
-    
-      .foot {
-        display: flex;
-        height: 20%;
-        flex-wrap: wrap;
-    flex-direction: column;
-    align-items: center;
-      }
-
-
-
-body {
-    color: black;
-    font-family: "Ariel", sans-serif;
+.page
+{
+  height: 100vh;
+ /* Use vh as a fallback for browsers that do not support Custom Properties */
+  height: calc(var(--vh, 1vh) * 100);
+  margin: 0 auto;
+  max-width: 100%;
+  color: black;
+  font-family: "Ariel", sans-serif;
 }
 
-section {
-    border-color: black;
+.head
+{
+  display: flex;
+  height: 20%;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
 }
 
-#logo {
-    width: 30%;
-    height: 20%;
-    margin-left: auto;
-    margin-right: auto;
+.main
+{
+  display: flex;
+  height: 60%;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
 }
 
-#verify {
-    width: 90%;
-    margin-left: auto;
-    margin-right: auto;
+.foot
+{
+  display: flex;
+  height: 20%;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
 }
 
-#gap {
-    margin-top: 5px;
+#logo
+{
+  width: 30%;
+  height: 20%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.centered_elements {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    align-items: center;
+#gap
+{
+  margin-top: 5px;
 }
 
-.form_login {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    align-items: center;
+#login
+{
+  margin-bottom: 5px;
 }
 
-.wifi_form {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    align-items: center;
+#margin_zero
+{
+  margin: 0;
 }
 
-#test {
-    display: block;
+#codeError
+{
+  display: none;
+  margin-bottom: 10px;
 }
 
-#login {
-    margin-bottom: 5px;
+#social
+{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
 }
 
-#devices {
-    margin: 0;
+#logintext
+{
+  text-align: center;
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 
-#handle {
-    margin: 0;
+.smGlobalBtn
+{
+ /* global button class */
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  box-shadow: 0 2px 2px #999;
+  padding: 0px;
+  text-decoration: none;
+  text-align: center;
+  color: #fff;
+  font-size: 25px;
+  font-weight: normal;
+  line-height: 2em;
+  border-radius: 25px;
+  -moz-border-radius: 25px;
+  -webkit-border-radius: 25px;
 }
-
-#codeError {
-    display: none;
-    margin-bottom: 10px;			   
-}
-
-#result {
-    margin: 0;
-}
-
-#thanks {
-    margin: 0;
-}
-
-#customers {
-    text-align: center;
-    margin: 0;
-}
-
-#social {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    align-items: center;
-}
-
-#logintext {
-    text-align: center;
-    margin-top: 5px;
-    margin-bottom: 5px;
-}
-
-.smGlobalBtn{ /* global button class */
-    display: inline-block;
-    position: relative;
-    cursor: pointer;
-    width: 50px;
-    height: 50px;
-    box-shadow: 0 2px 2px #999;
-    padding: 0px;
-    text-decoration: none;
-    text-align: center;
-    color: #fff;
-    font-size: 25px;
-    font-weight: normal;
-    line-height: 2em;
-    border-radius: 25px;
-    -moz-border-radius:25px;
-    -webkit-border-radius:25px;
-  }
   
 /* facebook button class*/
-.facebookBtn{
-background: #4060A5;
+.facebookBtn
+{
+  background: #4060A5;
 }
 
-.facebookBtn:before{ /* use :before to add the relevant icons */
-font-family: "FontAwesome";
-content: "\f09a"; /* add facebook icon */
+.facebookBtn:before
+{
+ /* use :before to add the relevant icons */
+  font-family: "FontAwesome";
+  content: "\f09a";
+ /* add facebook icon */
+  ;
 }
 
-.facebookBtn:hover{
-color: #4060A5;
-background: #fff;
+.facebookBtn:hover
+{
+  color: #4060A5;
+  background: #fff;
 }
 
-#powered {
-    margin: 0;
+a
+{
+  color: black;
+  text-decoration: underline;
 }
 
-#powered_verify {
-    text-align: center;
-    margin: 0;
-    margin-top: 100px;
-}
-
-#powered_verifypass {
-    text-align: center;
-    margin: 0;
-    margin-top: 160px;
-}
-
-#powered_mikrotik {
-    text-align: center;
-    margin: 0;
-    margin-top: 10px;
-}
-
-#powered_handle {
-    text-align: center;
-    margin: 0;
-    margin-top: 220px;
-}
-
-#powered_thanks {
-    text-align: center;
-    margin: 0;
-    margin-top: 220px;
-}
-
-#powered_welcome {
-    text-align: center;
-    margin: 0;
-    margin-top: 210px;
-}
-
-#copyright {
-    margin: 0;
-}
-
-a {
-    color: black;
-    text-decoration: underline;           
-}
-
-a:hover {
-    color: black;
+a:hover
+{
+  color: black;
 }
 
 /* Media Query for Desktops */
 
-@media only screen and (min-width: 768px) {
-    html {
-        overflow: hidden;
-    }
-    .bg {
-        position: absolute;
-        background-size: 100% 100%;
-    }
-    #logo {
-        max-width: 10%;
-    }
-    #login {
-        margin-top: 20px;
-    }
-    #powered {
-    }
-    #powered_verify {
-        margin-top: 120px;
-    }
-    #powered_verifypass {
-        margin-top: 220px;
-    }
-    #powered_mikrotik {
-        margin-top: 10px;
-    }
-    #powered_handle {
-        margin-top: 275px;
-    }
-    #powered_thanks {
-        margin-top: 275px;
-    }
-    #powered_welcome {
-        margin-top: 270px;
-    }
-    #logintext {
-        margin-top: 15px;
-        margin-bottom: 15px;
-    }
-    .wifi_form {
-        margin-top: 50px; display: flex; flex-wrap: wrap; flex-direction: column; align-items: center;
-    }
+@media only screen and (min-width: 768px)
+{
+  html
+  {
+    overflow: hidden;
+  }
+
+  .bg
+  {
+    position: absolute;
+    background-size: 100% 100%;
+  }
+
+  #logo
+  {
+    max-width: 10%;
+  }
+
+  #login
+  {
+    margin-top: 20px;
+  }
+
+  #logintext
+  {
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
+
 }
 
 /* Media Query for iPads */
 
 @media only screen 
 and (min-device-width : 768px) 
-and (max-device-width : 1024px)  {
-    #powered {
-        margin-top: 300px;
-    }
-    #powered_verify {
-        margin-top: 270px;
-    }
-    #powered_verifypass {
-        margin-top: 370px;
-    }
-    #powered_mikrotik {
-        margin-top: 80px;
-    }
-    #powered_handle {
-        margin-top: 420px;
-    }
-    #powered_thanks {
-        margin-top: 420px;
-    }
-    #powered_welcome {
-        margin-top: 410px;
-    }
-    #logo {
-        max-width: 20%;
-    }
-    #logintext {
-        margin-top: 15px;
-        margin-bottom: 15px;
-    }
+and (max-device-width : 1024px)
+{
+  #logo
+  {
+    max-width: 20%;
+  }
+
+  #logintext
+  {
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
 }
