@@ -1,4 +1,4 @@
-<?php error_reporting(E_ALL ^ E_NOTICE); 
+<?php error_reporting(E_ALL ^ E_NOTICE);
 session_start();
 
 /*
@@ -8,9 +8,10 @@ Printing a welcome message for the user
 ?>
 <!DOCTYPE HTML>
 <html>
+
 <head>
   <meta charset="utf-8">
-  <title><?php echo htmlspecialchars($business_name);?> WiFi</title>
+  <title><?php echo htmlspecialchars($business_name); ?> WiFi</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <link rel="stylesheet" href="bulma.min.css" />
   <script defer src="vendor\fortawesome\font-awesome\js\all.js"></script>
@@ -19,31 +20,31 @@ Printing a welcome message for the user
   <link rel="icon" type="image/png" href="favicomatic\favicon-16x16.png" sizes="16x16" />
   <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
-<div class="page">
+  <div class="page">
 
-<div class="head">
-  <br>
-  <figure id="logo">
-    <img src="logo.png">
-  </figure>
-</div>
+    <div class="head">
+      <br>
+      <figure id="logo">
+        <img src="logo.png">
+      </figure>
+    </div>
 
-<div class="main">
+    <div class="main">
       <seection class="section">
-      <div class="container">
-
-		<div id="margin_zero" class="content is-size-6">Welcome, <?php echo htmlspecialchars($_SESSION["fname"]);?>!</div>
-		<div id="margin_zero" class="content is-size-6">You'll be automatically authorized</div>
-		<div id="margin_zero" class="content is-size-6">on the network in a few moments</div>
+        <div class="container">
+          <div id="margin_zero" class="content is-size-6">Welcome, <?php echo htmlspecialchars($_SESSION["fname"]); ?>!</div>
+          <div id="margin_zero" class="content is-size-6">You'll be automatically authorized</div>
+          <div id="margin_zero" class="content is-size-6">on the network in a few moments</div>
+        </div>
+      </seection>
     </div>
-    </seection>
-    </div>
-    
     <div class="foot">
-      <div id="margin_zero" class="content has-text-centered is-size-6">Powered by <?php echo htmlspecialchars($business_name);?></div>
-      <div id="margin_zero" class="content has-text-centered is-size-6">(C) Copyright <?php echo htmlspecialchars($current_year);?></div>
-      </div>
+      <div id="margin_zero" class="content has-text-centered is-size-6">Powered by <?php echo htmlspecialchars($business_name); ?></div>
+      <div id="margin_zero" class="content has-text-centered is-size-6">(C) Copyright <?php echo htmlspecialchars($current_year); ?></div>
+    </div>
   </div>
 </body>
+
 </html>

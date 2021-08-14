@@ -9,28 +9,28 @@ $dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . "/../");
 $dotenv->load();
 
 $fb = new Facebook\Facebook([
-    'app_id'                => $_SERVER['APP_ID'],
-    'app_secret'            => $_SERVER['APP_SECRET'],
-    'default_graph_version' => $_SERVER['DEFAULT_GRAPH_VERSION'],
-  ]);
+  'app_id'                => $_SERVER['APP_ID'],
+  'app_secret'            => $_SERVER['APP_SECRET'],
+  'default_graph_version' => $_SERVER['DEFAULT_GRAPH_VERSION'],
+]);
 
 $helper = $fb->getRedirectLoginHelper();
 
-$_SESSION['FBRLH_state']=$_GET['state'];
+$_SESSION['FBRLH_state'] = $_GET['state'];
 
 try {
   $accessToken = $helper->getAccessToken();
-} catch(Facebook\Exceptions\FacebookResponseException $e) {
+} catch (Facebook\Exceptions\FacebookResponseException $e) {
   // When Graph returns an error
   echo 'Graph returned an error: ' . $e->getMessage();
   exit;
-} catch(Facebook\Exceptions\FacebookSDKException $e) {
+} catch (Facebook\Exceptions\FacebookSDKException $e) {
   // When validation fails or other local issues
   echo 'Facebook SDK returned an error: ' . $e->getMessage();
   exit;
 }
 
-if (! isset($accessToken)) {
+if (!isset($accessToken)) {
   if ($helper->getError()) {
     header('HTTP/1.0 401 Unauthorized');
     echo "Error: " . $helper->getError() . "\n";
@@ -47,7 +47,7 @@ if (! isset($accessToken)) {
 if (isset($accessToken)) {
   // Logged in!
   $_SESSION['facebook_access_token'] = (string) $accessToken;
-  echo "Logged in!". ".<br>";
+  echo "Logged in!" . ".<br>";
 
   // Now you can redirect to another page and use the
   // access token from $_SESSION['facebook_access_token']
@@ -56,20 +56,20 @@ if (isset($accessToken)) {
 try {
   // Returns a `Facebook\FacebookResponse` object
   $response = $fb->get('/me?fields=email,name', $_SESSION['facebook_access_token']);
-} catch(Facebook\Exceptions\FacebookResponseException $e) {
+} catch (Facebook\Exceptions\FacebookResponseException $e) {
   echo 'Graph returned an error: ' . $e->getMessage();
   exit;
-} catch(Facebook\Exceptions\FacebookSDKException $e) {
+} catch (Facebook\Exceptions\FacebookSDKException $e) {
   echo 'Facebook SDK returned an error: ' . $e->getMessage();
   exit;
 }
 
 $user = $response->getGraphUser();
 
-$_SESSION["email"]=$user['email'];
-$_SESSION["method"]="Facebook";
+$_SESSION["email"] = $user['email'];
+$_SESSION["method"] = "Facebook";
 
-$name=$user['name'];
+$name = $user['name'];
 $parts = explode(" ", $name);
 
 $_SESSION["lname"] = array_pop($parts);

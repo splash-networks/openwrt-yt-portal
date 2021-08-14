@@ -1,4 +1,4 @@
-<?php error_reporting(E_ALL ^ E_NOTICE); 
+<?php error_reporting(E_ALL ^ E_NOTICE);
 session_start();
 
 /*
@@ -21,16 +21,14 @@ use Twilio\Rest\Client;
 $twilio = new Client($sid, $token);
 
 $verification_check = $twilio->verify->v2->services($serviceid)
-                                         ->verificationChecks
-                                         ->create($_SESSION['code'], // code
-                                                  ["to" => $_SESSION['phone']]
-                                         );
+    ->verificationChecks
+    ->create(
+        $_SESSION['code'], // code
+        ["to" => $_SESSION['phone']]
+    );
 
 if ($verification_check->status == "approved") {
     header("Location: verify_pass.php");
-}
-else {
+} else {
     header("Location: verify_fail.php");
 }
-
-?>

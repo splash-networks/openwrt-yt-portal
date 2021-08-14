@@ -1,4 +1,4 @@
-<?php error_reporting(E_ALL ^ E_NOTICE); 
+<?php error_reporting(E_ALL ^ E_NOTICE);
 session_start();
 
 include 'parameters.php';
@@ -8,7 +8,7 @@ This page sends the API request to Twilio to send SMS to user's provided number,
 enter code received on their phone. Some basic error handling is also given using the Javascript function
 */
 
-$phone = $_POST['country_code'].$_POST['phone_number']; 
+$phone = $_POST['country_code'] . $_POST['phone_number'];
 
 $_SESSION['phone'] = trim($phone);
 
@@ -26,15 +26,16 @@ use Twilio\Rest\Client;
 $twilio = new Client($sid, $token);
 
 $verification = $twilio->verify->v2->services($serviceid)
-                                   ->verifications
-                                   ->create($_SESSION['phone'], "sms");
+  ->verifications
+  ->create($_SESSION['phone'], "sms");
 ?>
 
 <!doctype html>
 <html>
+
 <head>
   <meta charset="utf-8">
-  <title><?php echo htmlspecialchars($business_name);?> WiFi</title>
+  <title><?php echo htmlspecialchars($business_name); ?> WiFi</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <link rel="stylesheet" href="bulma.min.css" />
   <script defer src="vendor\fortawesome\font-awesome\js\all.js"></script>
@@ -42,67 +43,59 @@ $verification = $twilio->verify->v2->services($serviceid)
   <link rel="icon" type="image/png" href="favicomatic\favicon-16x16.png" sizes="16x16" />
   <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
-<div class="page">
+  <div class="page">
 
-<div class="head">
-  <br>
-  <figure id="logo">
-    <img src="logo.png">
-  </figure>
-</div>
+    <div class="head">
+      <br>
+      <figure id="logo">
+        <img src="logo.png">
+      </figure>
+    </div>
 
-<div class="main">
+    <div class="main">
       <seection class="section">
-
-    <form method="post" action="result.php" onsubmit="return codeCheck()">
-
-      <div id="margin_zero" class="content has-text-centered is-size-6">Please enter the 6 digit code</div>
-      <div id="margin_zero" class="content has-text-centered is-size-6">received on your provided number</div>
-
-      <div id="gap" class="content is-size-6"></div>
-
-      <div class="field">
-        <div class="control has-icons-left">
-          <input class="input" type="number" name="code" placeholder="Code" required>
-          <span class="icon is-small is-left">
-            <i class="fas fa-comment"></i>
-          </span>
-        </div>
-      </div>
-
-      <p class="help is-warning" id="codeError">Code Invalid: not a 6 digit number</p>
-      
-      <div class="buttons is-centered">
-        <button id="button_font" class="button is-danger">Verify</button>
-      </div>
-
-    </form>
-
-    </seection>
+        <form method="post" action="result.php" onsubmit="return codeCheck()">
+          <div id="margin_zero" class="content has-text-centered is-size-6">Please enter the 6 digit code</div>
+          <div id="margin_zero" class="content has-text-centered is-size-6">received on your provided number</div>
+          <div id="gap" class="content is-size-6"></div>
+          <div class="field">
+            <div class="control has-icons-left">
+              <input class="input" type="number" name="code" placeholder="Code" required>
+              <span class="icon is-small is-left">
+                <i class="fas fa-comment"></i>
+              </span>
+            </div>
+          </div>
+          <p class="help is-warning" id="codeError">Code Invalid: not a 6 digit number</p>
+          <div class="buttons is-centered">
+            <button id="button_font" class="button is-danger">Verify</button>
+          </div>
+        </form>
+      </seection>
     </div>
 
     <div class="foot">
-      <div id="margin_zero" class="content has-text-centered is-size-6">Powered by <?php echo htmlspecialchars($business_name);?></div>
-      <div id="margin_zero" class="content has-text-centered is-size-6">(C) Copyright <?php echo htmlspecialchars($current_year);?></div>
-      </div>
+      <div id="margin_zero" class="content has-text-centered is-size-6">Powered by <?php echo htmlspecialchars($business_name); ?></div>
+      <div id="margin_zero" class="content has-text-centered is-size-6">(C) Copyright <?php echo htmlspecialchars($current_year); ?></div>
+    </div>
   </div>
 
   <script>
-
     function codeCheck() {
       var codeInput = document.getElementById('code').value;
-    
+
       //The SMS code has to be a 6 digit number. Checking for that:
-      
+
       if (codeInput.length != 6 || isNaN(codeInput)) {
         document.getElementById("codeError").style.display = "block";
         return false;
-      }
-      else {
+      } else {
         return true;
       }
     }
   </script>
 </body>
+
 </html>

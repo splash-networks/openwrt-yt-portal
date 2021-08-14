@@ -3,8 +3,8 @@ session_start();
 
 include 'parameters.php';
 
-$mac=$_SESSION["id"];
-$ap=$_SESSION["ap"];
+$mac = $_SESSION["id"];
+$ap = $_SESSION["ap"];
 $method = $_SESSION["method"];
 $phone = $_SESSION['phone'];
 
@@ -39,17 +39,17 @@ $db_user = $_SERVER['DB_USER'];
 $db_pass = $_SERVER['DB_PASS'];
 $db_name = $_SERVER['DB_NAME'];
 
-$con=mysqli_connect($host_ip,$db_user,$db_pass,$db_name);
+$con = mysqli_connect($host_ip, $db_user, $db_pass, $db_name);
 
 if (mysqli_connect_errno()) {
-        echo "Failed to connect to SQL: " . mysqli_connect_error();
+  echo "Failed to connect to SQL: " . mysqli_connect_error();
 }
 
-if($_SESSION["user_type"]=="new" && $_SESSION["method"]=="Form"){
+if ($_SESSION["user_type"] == "new" && $_SESSION["method"] == "Form") {
 
-  $fname=$_POST['fname'];
-  $lname=$_POST['lname'];
-  $email=$_POST['email'];
+  $fname = $_POST['fname'];
+  $lname = $_POST['lname'];
+  $email = $_POST['email'];
 
   mysqli_query($con, "
   CREATE TABLE IF NOT EXISTS `$table_name` (
@@ -65,14 +65,12 @@ if($_SESSION["user_type"]=="new" && $_SESSION["method"]=="Form"){
     UNIQUE KEY `id_UNIQUE` (`id`)
   )");
 
-  mysqli_query($con,"INSERT INTO `$table_name` (phone, firstname, lastname, email, mac, method, last_updated) VALUES ('$phone', '$fname', '$lname', '$email', '$mac', '$method', '$last_updated')");
+  mysqli_query($con, "INSERT INTO `$table_name` (phone, firstname, lastname, email, mac, method, last_updated) VALUES ('$phone', '$fname', '$lname', '$email', '$mac', '$method', '$last_updated')");
+} elseif ($_SESSION["user_type"] == "new" && $_SESSION["method"] == "Facebook") {
 
-}
-elseif($_SESSION["user_type"]=="new" && $_SESSION["method"]=="Facebook"){
-
-  $fname=$_SESSION['fname'];
-  $lname=$_SESSION['lname'];
-  $email=$_SESSION['email'];
+  $fname = $_SESSION['fname'];
+  $lname = $_SESSION['lname'];
+  $email = $_SESSION['email'];
 
   mysqli_query($con, "
   CREATE TABLE IF NOT EXISTS `$table_name` (
@@ -88,15 +86,13 @@ elseif($_SESSION["user_type"]=="new" && $_SESSION["method"]=="Facebook"){
     UNIQUE KEY `id_UNIQUE` (`id`)
   )");
 
-  mysqli_query($con,"INSERT INTO `$table_name` (phone, firstname, lastname, email, mac, method, last_updated) VALUES ('$phone', '$fname', '$lname', '$email', '$mac', '$method', '$last_updated')");
+  mysqli_query($con, "INSERT INTO `$table_name` (phone, firstname, lastname, email, mac, method, last_updated) VALUES ('$phone', '$fname', '$lname', '$email', '$mac', '$method', '$last_updated')");
+} else {
+  $fname = $_SESSION['fname'];
+  $lname = $_SESSION['lname'];
+  $email = $_SESSION['email'];
 
-}
-else {
-  $fname=$_SESSION['fname'];
-  $lname=$_SESSION['lname'];
-  $email=$_SESSION['email'];
-
-  mysqli_query($con,"INSERT INTO `$table_name` (phone, firstname, lastname, email, mac, method, last_updated) VALUES ('$phone', '$fname', '$lname', '$email', '$mac', '$method', '$last_updated')");
+  mysqli_query($con, "INSERT INTO `$table_name` (phone, firstname, lastname, email, mac, method, last_updated) VALUES ('$phone', '$fname', '$lname', '$email', '$mac', '$method', '$last_updated')");
 }
 
 mysqli_close($con);
@@ -104,41 +100,42 @@ mysqli_close($con);
 ?>
 <!DOCTYPE HTML>
 <html>
+
 <head>
   <meta charset="utf-8">
-  <title><?php echo htmlspecialchars($business_name);?> WiFi</title>
+  <title><?php echo htmlspecialchars($business_name); ?> WiFi</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <meta http-equiv="refresh" content="5;url=thankyou.php" />
   <link rel="stylesheet" href="bulma.min.css" />
   <script defer src="fontawesome-free-5.3.1-web\js\all.js"></script>
   <link rel="icon" type="image/png" href="favicomatic\favicon-32x32.png" sizes="32x32" />
   <link rel="icon" type="image/png" href="favicomatic\favicon-16x16.png" sizes="16x16" />
-  <link rel="stylesheet" href="style.css" />  
+  <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
-<div class="page">
+  <div class="page">
 
-<div class="head">
-  <br>
-  <figure id="logo">
-    <img src="logo.png">
-  </figure>
-</div>
+    <div class="head">
+      <br>
+      <figure id="logo">
+        <img src="logo.png">
+      </figure>
+    </div>
 
-<div class="main">
+    <div class="main">
       <seection class="section">
-
-		<div id="margin_zero" class="content has-text-centered is-size-6">Please wait, you are being </div>
-		<div id="margin_zero" class="content has-text-centered is-size-6">authorized on WiFi</div>
-
-    </seection>
+        <div id="margin_zero" class="content has-text-centered is-size-6">Please wait, you are being </div>
+        <div id="margin_zero" class="content has-text-centered is-size-6">authorized on WiFi</div>
+      </seection>
     </div>
 
     <div class="foot">
-      <div id="margin_zero" class="content has-text-centered is-size-6">Powered by <?php echo htmlspecialchars($business_name);?></div>
-      <div id="margin_zero" class="content has-text-centered is-size-6">(C) Copyright <?php echo htmlspecialchars($current_year);?></div>
-      </div>
+      <div id="margin_zero" class="content has-text-centered is-size-6">Powered by <?php echo htmlspecialchars($business_name); ?></div>
+      <div id="margin_zero" class="content has-text-centered is-size-6">(C) Copyright <?php echo htmlspecialchars($current_year); ?></div>
+    </div>
   </div>
 
 </body>
+
 </html>
