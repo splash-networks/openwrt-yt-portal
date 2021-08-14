@@ -77,7 +77,7 @@ $loginUrl    = $helper->getLoginUrl($callBackUrl,$scope);
         </div>
       </div>
       
-      <div id="access_wifi" class="control">
+      <div class="control">
         <button id="button_font" class="button is-danger">Continue</button>
       </div>
                         

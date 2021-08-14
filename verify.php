@@ -72,7 +72,7 @@ $verification = $twilio->verify->v2->services($serviceid)
 
       <p class="help is-warning" id="codeError">Code Invalid: not a 6 digit number</p>
       
-      <div id="access_wifi" class="control">
+      <div class="control">
         <button id="button_font" class="button is-danger">Verify</button>
       </div>
 
