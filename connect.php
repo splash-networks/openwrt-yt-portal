@@ -108,7 +108,7 @@ mysqli_close($con);
   <meta charset="utf-8">
   <title><?php echo htmlspecialchars($business_name);?> WiFi</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-  <meta http-equiv="refresh" content="5;url=thankyou.htm" />
+  <meta http-equiv="refresh" content="5;url=thankyou.php" />
   <link rel="stylesheet" href="bulma.min.css" />
   <script defer src="fontawesome-free-5.3.1-web\js\all.js"></script>
   <link rel="icon" type="image/png" href="favicomatic\favicon-32x32.png" sizes="32x32" />
