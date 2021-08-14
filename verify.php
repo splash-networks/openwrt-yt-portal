@@ -42,17 +42,17 @@ $verification = $twilio->verify->v2->services($serviceid)
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="bg">
+<div class="page">
 
-  <section class="hero is-small">
-      <div class="hero-body">
-        <figure id="logo">
-          <img src="logo.png">
-        </figure>
-      </div>
-    </section>
+<div class="head">
+  <br>
+  <figure id="logo">
+    <img src="logo.png">
+  </figure>
+</div>
 
-    <section class="section">
+<div class="main">
+      <seection class="section">
 
     <form class="wifi_form" method="post" action="result.php" onsubmit="return codeCheck()">
 
@@ -78,13 +78,13 @@ $verification = $twilio->verify->v2->services($serviceid)
 
     </form>
 
-    </section>
+    </seection>
+    </div>
 
-    <footer class="footer">
+    <div class="foot">
       <div id="powered" class="content has-text-centered is-size-6">Powered by <?php echo htmlspecialchars($business_name);?></div>
       <div id="copyright" class="content has-text-centered is-size-6">(C) Copyright <?php echo htmlspecialchars($current_year);?></div>
-    </footer>
-
+      </div>
   </div>
 
   <script>

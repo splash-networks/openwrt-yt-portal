@@ -7,7 +7,9 @@ include 'parameters.php';
 <html>
 <head>
   <meta charset="utf-8">
-  <title><?php echo htmlspecialchars($business_name);?> WiFi</title>
+  <title>
+    <?php echo htmlspecialchars($business_name);?> WiFi
+  </title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <link rel="stylesheet" href="bulma.min.css" />
   <script defer src="vendor\fortawesome\font-awesome\js\all.js"></script>
@@ -17,29 +19,28 @@ include 'parameters.php';
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-	<div class="bg">
+  <div class="page">
 
-  <section class="hero is-small">
-      <div class="hero-body">
-        <figure id="logo">
-          <img src="logo.png">
-        </figure>
-      </div>
-    </section>
+    <div class="head">
+      <br>
+      <figure id="logo">
+        <img src="logo.png">
+      </figure>
+    </div>
 
-    <section class="section">
+    <div class="main">
+      <seection class="section">
+        <div id="result" class="content has-text-centered is-size-6">Great! Your code has been approved!</div>
+        <div id="devices" class="content has-text-centered is-size-6">You'll be automatically redirected</div>
+        <div id="devices" class="content has-text-centered is-size-6">in a few moments</div>
+      </seection>
+    </div>
 
- 		<div id="result" class="content has-text-centered is-size-6">Great! Your code has been approved!</div>
-		<div id="devices" class="content has-text-centered is-size-6">You'll be automatically redirected</div>
-		<div id="devices" class="content has-text-centered is-size-6">in a few moments</div>
-
-    </section>
-    
-    <footer class="footer">
+    <div class="foot">
       <div id="powered" class="content has-text-centered is-size-6">Powered by <?php echo htmlspecialchars($business_name);?></div>
       <div id="copyright" class="content has-text-centered is-size-6">(C) Copyright <?php echo htmlspecialchars($current_year);?></div>
-    </footer>
+    </div>
+  </div>
 
-	</div>
 </body>
 </html>

@@ -2,6 +2,38 @@
     *{ border: 1px solid red; }
 */
 
+    .page {
+        height: 100vh; /* Use vh as a fallback for browsers that do not support Custom Properties */
+        height: calc(var(--vh, 1vh) * 100);
+        margin: 0 auto;
+        max-width: 100%;
+      }
+
+
+      .head {
+        display: flex;
+        height: 20%;
+        flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+      }
+    
+      .main {
+        display: flex;
+        height: 60%;
+        flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+      }
+    
+      .foot {
+        display: flex;
+        height: 20%;
+        flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+      }
+
 body {
     color: black;
     font-family: "Ariel", sans-serif;

@@ -68,15 +68,17 @@ if ($result->num_rows >= 1) {
 <body>
 
 
-    <section class="hero is-small">
-      <div class="hero-body">
-        <figure id="logo">
-          <img src="logo.png">
-        </figure>
-      </div>
-    </section>
+<div class="page">
 
-    <section class="section">
+<div class="head">
+  <br>
+  <figure id="logo">
+    <img src="logo.png">
+  </figure>
+</div>
+
+<div class="main">
+      <seection class="section">
       <div id="login" class="content is-size-4 has-text-centered has-text-weight-bold">Login for Free Wi-Fi</div>
       <div id="gap" class="content is-size-6"></div>
       <form id="verify" method="post" action="verify.php">
@@ -339,13 +341,13 @@ if ($result->num_rows >= 1) {
 
         </div>
       </form>
-    </section>
+      </seection>
+    </div>
 
-    <footer class="footer">
+    <div class="foot">
       <div id="powered" class="content has-text-centered is-size-6">Powered by <?php echo htmlspecialchars($business_name);?></div>
       <div id="copyright" class="content has-text-centered is-size-6">(C) Copyright <?php echo htmlspecialchars($current_year);?></div>
-    </footer>
-
-
+      </div>
+  </div>
 </body>
 </html>
