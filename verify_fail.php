@@ -17,16 +17,26 @@ session_start();
 <body>
 	<div class="bg">
 
-    <figure id="logo">
-      <img src="logo.png">
-    </figure>
+  <section class="hero is-small">
+      <div class="hero-body">
+        <figure id="logo">
+          <img src="logo.png">
+        </figure>
+      </div>
+    </section>
+
+    <section class="section">
 
 		<div id="result" class="content is-size-6">Sorry! The code you entered</div>
 		<div id="devices" class="content is-size-6">is not correct. You'll shortly be</div>
 		<div id="devices" class="content is-size-6">redirected back to our main page</div>
 
-    <div id="powered" class="content is-size-6">Powered by <?php echo htmlspecialchars($business_name);?></div>
-    <div id="copyright" class="content is-size-6">(C) Copyright <?php echo htmlspecialchars($current_year);?></div>
+    </section>
+
+    <footer class="footer">
+      <div id="powered" class="content has-text-centered is-size-6">Powered by <?php echo htmlspecialchars($business_name);?></div>
+      <div id="copyright" class="content has-text-centered is-size-6">(C) Copyright <?php echo htmlspecialchars($current_year);?></div>
+    </footer>
 
 	</div>
 </body>

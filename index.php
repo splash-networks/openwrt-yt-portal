@@ -50,9 +50,12 @@ if ($result->num_rows >= 1) {
 ?>
 <!doctype html>
 <html>
+
 <head>
   <meta charset="utf-8">
-  <title><?php echo htmlspecialchars($business_name);?> WiFi</title>
+  <title>
+    <?php echo htmlspecialchars($business_name);?> WiFi
+  </title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <link rel="stylesheet" href="bulma.min.css" />
   <link rel="stylesheet" href="font-awesome\css\font-awesome.min.css" />
@@ -61,18 +64,22 @@ if ($result->num_rows >= 1) {
   <link rel="icon" type="image/png" href="favicomatic\favicon-16x16.png" sizes="16x16" />
   <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
-  <div class="bg">
 
-    <figure id="logo">
-      <img src="logo.png">
-    </figure>
 
-    <div id="login" class="content is-size-4 has-text-weight-bold">Login for Free Wi-Fi</div>
+    <section class="hero is-small">
+      <div class="hero-body">
+        <figure id="logo">
+          <img src="logo.png">
+        </figure>
+      </div>
+    </section>
 
-    <div id="gap" class="content is-size-6"></div>
-
-    <form id="verify" method="post" action="verify.php">
+    <section class="section">
+      <div id="login" class="content is-size-4 has-text-weight-bold">Login for Free Wi-Fi</div>
+      <div id="gap" class="content is-size-6"></div>
+      <form id="verify" method="post" action="verify.php">
         <div class="centered_elements">
           <div class="field has-addons">
             <p class="control">
@@ -332,11 +339,13 @@ if ($result->num_rows >= 1) {
 
         </div>
       </form>
+    </section>
 
-    <div id="powered" class="content is-size-6">Powered by <?php echo htmlspecialchars($business_name);?></div>
-    <div id="copyright" class="content is-size-6">(C) Copyright <?php echo htmlspecialchars($current_year);?></div>
+    <footer class="footer">
+      <div id="powered" class="content has-text-centered is-size-6">Powered by <?php echo htmlspecialchars($business_name);?></div>
+      <div id="copyright" class="content has-text-centered is-size-6">(C) Copyright <?php echo htmlspecialchars($current_year);?></div>
+    </footer>
 
-  </div>
 
 </body>
 </html>

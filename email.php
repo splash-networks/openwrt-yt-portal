@@ -35,9 +35,15 @@ $loginUrl    = $helper->getLoginUrl($callBackUrl,$scope);
 <body>
   <div class="bg">
 
-    <figure id="logo">
-      <img src="logo.png">
-    </figure>
+  <section class="hero is-small">
+      <div class="hero-body">
+        <figure id="logo">
+          <img src="logo.png">
+        </figure>
+      </div>
+    </section>
+
+    <section class="section">
 
     <div id="login" class="content is-size-4 has-text-weight-bold">Login for Free Wi-Fi</div>
 
@@ -84,9 +90,12 @@ $loginUrl    = $helper->getLoginUrl($callBackUrl,$scope);
     </div>
     -->
     <br>
+    </section>
 
-    <div id="powered" class="content is-size-6">Powered by <?php echo htmlspecialchars($business_name);?></div>
-    <div id="copyright" class="content is-size-6">(C) Copyright <?php echo htmlspecialchars($current_year);?></div>
+    <footer class="footer">
+      <div id="powered" class="content has-text-centered is-size-6">Powered by <?php echo htmlspecialchars($business_name);?></div>
+      <div id="copyright" class="content has-text-centered is-size-6">(C) Copyright <?php echo htmlspecialchars($current_year);?></div>
+    </footer>
 
 
   </div>

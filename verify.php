@@ -44,9 +44,15 @@ $verification = $twilio->verify->v2->services($serviceid)
 <body>
   <div class="bg">
 
-      <figure id="logo">
-        <img src="logo.png">
-      </figure>
+  <section class="hero is-small">
+      <div class="hero-body">
+        <figure id="logo">
+          <img src="logo.png">
+        </figure>
+      </div>
+    </section>
+
+    <section class="section">
 
     <form class="wifi_form" method="post" action="result.php" onsubmit="return codeCheck()">
 
@@ -72,8 +78,12 @@ $verification = $twilio->verify->v2->services($serviceid)
 
     </form>
 
-    <div id="powered" class="content is-size-6">Powered by <?php echo htmlspecialchars($business_name);?></div>
-    <div id="copyright" class="content is-size-6">(C) Copyright <?php echo htmlspecialchars($current_year);?></div>
+    </section>
+
+    <footer class="footer">
+      <div id="powered" class="content has-text-centered is-size-6">Powered by <?php echo htmlspecialchars($business_name);?></div>
+      <div id="copyright" class="content has-text-centered is-size-6">(C) Copyright <?php echo htmlspecialchars($current_year);?></div>
+    </footer>
 
   </div>
 
