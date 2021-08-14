@@ -79,10 +79,11 @@ if ($result->num_rows >= 1) {
 
 <div class="main">
       <seection class="section">
+      <div class="container">
       <div id="login" class="content is-size-4 has-text-centered has-text-weight-bold">Login for Free Wi-Fi</div>
       <div id="gap" class="content is-size-6"></div>
       <form id="verify" method="post" action="verify.php">
-        <div class="centered_elements">
+
           <div class="field has-addons">
             <p class="control">
               <span class="select">
@@ -336,11 +337,12 @@ if ($result->num_rows >= 1) {
             </p>
 
           </div>
-
+          <div class="buttons is-centered">
           <button id="test" class="button is-danger">Verify Phone Number</button>
-
         </div>
+
       </form>
+</div>
       </seection>
     </div>
 
