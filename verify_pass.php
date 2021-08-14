@@ -27,9 +27,9 @@ session_start();
 
     <section class="section">
 
- 		<div id="result" class="content is-size-6">Great! Your code has been approved!</div>
-		<div id="devices" class="content is-size-6">You'll be automatically redirected</div>
-		<div id="devices" class="content is-size-6">in a few moments</div>
+ 		<div id="result" class="content has-text-centered is-size-6">Great! Your code has been approved!</div>
+		<div id="devices" class="content has-text-centered is-size-6">You'll be automatically redirected</div>
+		<div id="devices" class="content has-text-centered is-size-6">in a few moments</div>
 
     </section>
     

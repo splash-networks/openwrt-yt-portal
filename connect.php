@@ -128,8 +128,8 @@ mysqli_close($con);
 
     <section class="section">
 
-		<div id="handle" class="content is-size-6">Please wait, you are being </div>
-		<div id="devices" class="content is-size-6">authorized on WiFi</div>
+		<div id="handle" class="content has-text-centered is-size-6">Please wait, you are being </div>
+		<div id="devices" class="content has-text-centered is-size-6">authorized on WiFi</div>
 
     </section>
 

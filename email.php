@@ -45,9 +45,9 @@ $loginUrl    = $helper->getLoginUrl($callBackUrl,$scope);
 
     <section class="section">
 
-    <div id="login" class="content is-size-4 has-text-weight-bold">Login for Free Wi-Fi</div>
+    <div id="login" class="content is-size-4 has-text-centered has-text-weight-bold">Login for Free Wi-Fi</div>
 
-    <form id="login_success" class="form_login" method="post" action="connect.php">
+    <form class="form_login" method="post" action="connect.php">
       <br>
       
       <div class="field">

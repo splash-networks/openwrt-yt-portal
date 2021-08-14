@@ -31,8 +31,8 @@ include 'parameters.php';
 
     <section class="section">
 
-		<div id="thanks" class="content is-size-6">Thanks, you are now </div>
-		<div id="devices" class="content is-size-6">authorized on WiFi</div>
+		<div id="thanks" class="content has-text-centered is-size-6">Thanks, you are now </div>
+		<div id="devices" class="content has-text-centered is-size-6">authorized on WiFi</div>
 
     </section>
 
