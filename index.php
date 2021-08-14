@@ -77,7 +77,7 @@ if ($result->num_rows >= 1) {
     </section>
 
     <section class="section">
-      <div id="login" class="content is-size-4 has-text-weight-bold">Login for Free Wi-Fi</div>
+      <div id="login" class="content is-size-4 has-text-centered has-text-weight-bold">Login for Free Wi-Fi</div>
       <div id="gap" class="content is-size-6"></div>
       <form id="verify" method="post" action="verify.php">
         <div class="centered_elements">
