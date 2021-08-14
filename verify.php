@@ -56,14 +56,14 @@ $verification = $twilio->verify->v2->services($serviceid)
 
     <form class="wifi_form" method="post" action="result.php" onsubmit="return codeCheck()">
 
-      <div id="devices" class="content is-size-6">Please enter the 6 digit code</div>
-      <div id="devices" class="content is-size-6">received on your provided number</div>
+      <div id="devices" class="content has-text-centered is-size-6">Please enter the 6 digit code</div>
+      <div id="devices" class="content has-text-centered is-size-6">received on your provided number</div>
 
       <div id="gap" class="content is-size-6"></div>
 
       <div class="field">
         <div class="control has-icons-left">
-          <input class="input" type="number" id="code" name="code" placeholder="Code" required>
+          <input class="input" type="number" name="code" placeholder="Code" required>
           <span class="icon is-small is-left">
             <i class="fas fa-comment"></i>
           </span>

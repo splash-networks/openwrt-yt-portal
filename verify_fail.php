@@ -1,5 +1,7 @@
 <?php
 session_start();
+
+include 'parameters.php';
 ?>
 <!DOCTYPE HTML>
 <html>
