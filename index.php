@@ -356,7 +356,7 @@ if ($result->num_rows >= 1) {
 
           </form>
         </div>
-
+        <br>
         <div id="logintext" class="content has-text-centered is-size-5 has-text-weight-bold">Or login using:</div>
     
         <div id="social">
