@@ -7,16 +7,6 @@ require __DIR__ . '/vendor/autoload.php';
 $dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . "/../");
 $dotenv->load();
 
-$fb = new Facebook\Facebook([
-  'app_id'                => $_SERVER['APP_ID'],
-  'app_secret'            => $_SERVER['APP_SECRET'],
-  'default_graph_version' => $_SERVER['DEFAULT_GRAPH_VERSION'],
-]);
-
-$helper      = $fb->getRedirectLoginHelper();
-$scope       = array("email");
-$loginUrl    = $helper->getLoginUrl($callBackUrl, $scope);
-
 ?>
 
 <!doctype html>
@@ -80,12 +70,6 @@ $loginUrl    = $helper->getLoginUrl($callBackUrl, $scope);
             <button id="button_font" class="button is-danger">Continue</button>
           </div>
         </form>
-
-    <div id="logintext" class="content has-text-centered is-size-6">Or login using:</div>
-    
-    <div id="social">
-      <a href="<?php echo htmlspecialchars($loginUrl); ?>" class="facebookBtn smGlobalBtn"></a>
-    </div>
 
         <br>
       </seection>

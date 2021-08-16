@@ -7,9 +7,21 @@ require __DIR__ . '/vendor/autoload.php';
 $dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . "/../");
 $dotenv->load();
 
-$_SESSION["id"] = $_GET['id'];
-$_SESSION["ap"] = $_GET['ap'];
+$fb = new Facebook\Facebook([
+  'app_id'                => $_SERVER['APP_ID'],
+  'app_secret'            => $_SERVER['APP_SECRET'],
+  'default_graph_version' => $_SERVER['DEFAULT_GRAPH_VERSION'],
+]);
 
+$helper      = $fb->getRedirectLoginHelper();
+$scope       = array("email");
+$loginUrl    = $helper->getLoginUrl($callBackUrl, $scope);
+
+
+if (!isset($_SESSION['id'])) {
+  $_SESSION["id"] = $_GET['id'];
+  $_SESSION["ap"] = $_GET['ap'];
+}
 
 $_SESSION["user_type"] = "new";
 $_SESSION["method"] = "Form";
@@ -34,6 +46,7 @@ $result = mysqli_query($con, "SELECT * FROM `$table_name` WHERE mac='$_SESSION[i
 if ($result->num_rows >= 1) {
   $row = mysqli_fetch_array($result);
 
+  $_SESSION["phone"] = $row[1];
   $_SESSION["fname"] = $row[2];
   $_SESSION["lname"] = $row[3];
   $_SESSION["email"] = $row[4];
@@ -80,7 +93,7 @@ if ($result->num_rows >= 1) {
     <div class="main">
       <seection class="section">
         <div class="container">
-          <div id="login" class="content is-size-4 has-text-centered has-text-weight-bold">Login for Free Wi-Fi</div>
+          <div id="login" class="content is-size-4 has-text-centered has-text-weight-bold">Enter your phone number</div>
           <div id="gap" class="content is-size-6"></div>
           <form id="verify" method="post" action="verify.php">
 
@@ -342,6 +355,12 @@ if ($result->num_rows >= 1) {
             </div>
 
           </form>
+        </div>
+
+        <div id="logintext" class="content has-text-centered is-size-6">Or login using:</div>
+    
+        <div id="social">
+          <a href="<?php echo htmlspecialchars($loginUrl); ?>" class="facebookBtn smGlobalBtn"></a>
         </div>
       </seection>
     </div>
