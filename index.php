@@ -71,11 +71,8 @@ if ($result->num_rows >= 1) {
   </title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <link rel="stylesheet" href="bulma.min.css" />
-  <link rel="stylesheet" href="font-awesome\css\font-awesome.min.css" />
-  <script>
-    FontAwesomeConfig = { autoReplaceSvg: false }
-  </script>
-  <script defer src="vendor\fortawesome\font-awesome\js\all.js"></script>
+  <link rel="stylesheet" href="vendor\fortawesome\font-awesome\css\all.css" />
+  <!--<script defer src="vendor\fortawesome\font-awesome\js\all.js"></script>-->
   <link rel="icon" type="image/png" href="favicomatic\favicon-32x32.png" sizes="32x32" />
   <link rel="icon" type="image/png" href="favicomatic\favicon-16x16.png" sizes="16x16" />
   <link rel="stylesheet" href="style.css" />
