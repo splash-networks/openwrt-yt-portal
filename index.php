@@ -93,7 +93,7 @@ if ($result->num_rows >= 1) {
     <div class="main">
       <seection class="section">
         <div class="container">
-          <div id="login" class="content is-size-4 has-text-centered has-text-weight-bold">Enter your phone number</div>
+          <div id="login" class="content is-size-5 has-text-centered has-text-weight-bold">Enter your phone number</div>
           <div id="gap" class="content is-size-6"></div>
           <form id="verify" method="post" action="verify.php">
 
@@ -357,7 +357,7 @@ if ($result->num_rows >= 1) {
           </form>
         </div>
 
-        <div id="logintext" class="content has-text-centered is-size-6">Or login using:</div>
+        <div id="logintext" class="content has-text-centered is-size-5 has-text-weight-bold">Or login using:</div>
     
         <div id="social">
           <a href="<?php echo htmlspecialchars($loginUrl); ?>" class="facebookBtn smGlobalBtn"></a>
