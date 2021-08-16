@@ -47,7 +47,6 @@ if (!isset($accessToken)) {
 if (isset($accessToken)) {
   // Logged in!
   $_SESSION['facebook_access_token'] = (string) $accessToken;
-  echo "Logged in!" . ".<br>";
 
   // Now you can redirect to another page and use the
   // access token from $_SESSION['facebook_access_token']
@@ -75,4 +74,7 @@ $parts = explode(" ", $name);
 $_SESSION["lname"] = array_pop($parts);
 $_SESSION["fname"] = implode(" ", $parts);
 
-header("Location: connect.php");
+#header("Location: connect.php");
+echo '<pre>';
+var_dump($_SESSION);
+echo '</pre>';
