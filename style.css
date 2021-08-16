@@ -81,59 +81,6 @@
   margin-bottom: 5px;
 }
 
-.smGlobalBtn
-{
- /* global button class */
-  display: inline-block;
-  position: relative;
-  cursor: pointer;
-  width: 50px;
-  height: 50px;
-  box-shadow: 0 2px 2px #999;
-  padding: 0px;
-  text-decoration: none;
-  text-align: center;
-  color: #fff;
-  font-size: 25px;
-  font-weight: normal;
-  line-height: 2em;
-  border-radius: 25px;
-  -moz-border-radius: 25px;
-  -webkit-border-radius: 25px;
-}
-  
-/* facebook button class*/
-.facebookBtn
-{
-  background: #4060A5;
-}
-
-.facebookBtn:before
-{
- /* use :before to add the relevant icons */
-  font-family: "FontAwesome";
-  content: "\f09a";
- /* add facebook icon */
-  ;
-}
-
-.facebookBtn:hover
-{
-  color: #4060A5;
-  background: #fff;
-}
-
-a
-{
-  color: black;
-  text-decoration: underline;
-}
-
-a:hover
-{
-  color: black;
-}
-
 /* Media Query for Desktops */
 
 @media only screen and (min-width: 768px)
