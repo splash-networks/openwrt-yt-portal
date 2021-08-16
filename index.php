@@ -69,7 +69,7 @@ if ($result->num_rows >= 1) {
   <title>
     <?php echo htmlspecialchars($business_name); ?> WiFi
   </title>
-  <!--<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <link rel="stylesheet" href="bulma.min.css" />
   <link rel="stylesheet" href="vendor\fortawesome\font-awesome\css\all.css" />
   <link rel="icon" type="image/png" href="favicomatic\favicon-32x32.png" sizes="32x32" />
