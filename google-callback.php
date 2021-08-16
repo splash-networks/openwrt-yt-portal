@@ -32,7 +32,8 @@ class GoogleLoginApi
         }
 
         public function GetUserProfileInfo($access_token) {
-                $url = 'https://www.googleapis.com/plus/v1/people/me';
+                //$url = 'https://www.googleapis.com/plus/v1/people/me';
+                $url = 'https://www.googleapis.com/oauth2/v3/userinfo';
 
                 $ch = curl_init();
                 curl_setopt($ch, CURLOPT_URL, $url);
@@ -57,8 +58,6 @@ if(isset($_GET['code'])) {
 
                 // Access Tokem
                 $access_token = $data['access_token'];
-
-                echo $access_token;
 
                 // Get user information
                 $user_info = $gapi->GetUserProfileInfo($access_token);
