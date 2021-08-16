@@ -361,7 +361,7 @@ if ($result->num_rows >= 1) {
     
         <div id="social">
           <!--<a href="<?php echo htmlspecialchars($loginUrl); ?>" class="facebookBtn smGlobalBtn"></a>-->
-          <a href="<?php echo htmlspecialchars($loginUrl); ?>" class="fab fa-facebook fa-2x"></a>
+          <a href="<?php echo htmlspecialchars($loginUrl); ?>" class="fab fa-facebook fa-2x" style="color:#DDDDDD;"></a>
         </div>
       </seection>
     </div>
