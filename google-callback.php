@@ -11,6 +11,8 @@ $client_id = $_SERVER['CLIENT_ID'];
 $client_secret = $_SERVER['CLIENT_SECRET'];
 $client_redirect_url = $_SERVER['CLIENT_REDIRECT_URL'];
 
+print_r ($_GET);
+
 class GoogleLoginApi
 {
         public function GetAccessToken($client_id, $redirect_uri, $client_secret, $code) {

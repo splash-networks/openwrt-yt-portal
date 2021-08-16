@@ -44,7 +44,7 @@ $google_login_url = 'https://accounts.google.com/o/oauth2/v2/auth?scope=' . urle
     
         <div id="social">
           <a href="<?php echo htmlspecialchars($google_login_url); ?>">
-            <i class="fa fa-google fa-2x"></i>
+            <i class="fa fa-google"></i>
           </a>
         </div>
       </seection>
