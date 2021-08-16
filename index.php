@@ -360,7 +360,8 @@ if ($result->num_rows >= 1) {
         <div id="logintext" class="content has-text-centered is-size-5 has-text-weight-bold">Or login using:</div>
     
         <div id="social">
-          <a href="<?php echo htmlspecialchars($loginUrl); ?>" class="facebookBtn smGlobalBtn"></a>
+          <!--<a href="<?php echo htmlspecialchars($loginUrl); ?>" class="facebookBtn smGlobalBtn"></a>-->
+          <a href="<?php echo htmlspecialchars($loginUrl); ?>" class="fa fa-facebook"></a>
         </div>
       </seection>
     </div>
