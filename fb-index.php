@@ -39,8 +39,6 @@ $loginUrl    = $helper->getLoginUrl($callBackUrl,$scope);
       <img src="logo.png">
     </figure>
 
-    <div id="logintext" class="content is-size-6">Or login using:</div>
-    
     <div id="social">
       <a href="<?php echo htmlspecialchars($loginUrl);?>" class="facebookBtn smGlobalBtn"></a>
     </div>
