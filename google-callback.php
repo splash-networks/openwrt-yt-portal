@@ -11,8 +11,6 @@ $client_id = $_SERVER['CLIENT_ID'];
 $client_secret = $_SERVER['CLIENT_SECRET'];
 $client_redirect_url = $_SERVER['CLIENT_REDIRECT_URL'];
 
-print_r ($_GET);
-
 class GoogleLoginApi
 {
         public function GetAccessToken($client_id, $redirect_uri, $client_secret, $code) {
@@ -60,10 +58,12 @@ if(isset($_GET['code'])) {
                 // Access Tokem
                 $access_token = $data['access_token'];
 
+                echo $access_token;
+
                 // Get user information
                 $user_info = $gapi->GetUserProfileInfo($access_token);
 
-                //echo '<pre>';print_r($user_info); echo '</pre>';
+                echo '<pre>';print_r($user_info); echo '</pre>';
 
                 $email = $user_info['emails'][0]['value'];
 
