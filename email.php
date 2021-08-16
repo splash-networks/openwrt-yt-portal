@@ -80,13 +80,13 @@ $loginUrl    = $helper->getLoginUrl($callBackUrl, $scope);
             <button id="button_font" class="button is-danger">Continue</button>
           </div>
         </form>
-        <!--
+
     <div id="logintext" class="content has-text-centered is-size-6">Or login using:</div>
     
     <div id="social">
       <a href="<?php echo htmlspecialchars($loginUrl); ?>" class="facebookBtn smGlobalBtn"></a>
     </div>
-    -->
+
         <br>
       </seection>
     </div>

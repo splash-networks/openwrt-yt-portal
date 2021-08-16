@@ -74,7 +74,4 @@ $parts = explode(" ", $name);
 $_SESSION["lname"] = array_pop($parts);
 $_SESSION["fname"] = implode(" ", $parts);
 
-#header("Location: connect.php");
-echo '<pre>';
-var_dump($_SESSION);
-echo '</pre>';
+header("Location: connect.php");
