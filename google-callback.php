@@ -62,27 +62,27 @@ if(isset($_GET['code'])) {
                 // Get user information
                 $user_info = $gapi->GetUserProfileInfo($access_token);
 
-                echo '<pre>';print_r($user_info); echo '</pre>';
+                //echo '<pre>';print_r($user_info); echo '</pre>';
 
-                $email = $user_info['emails'][0]['value'];
+                // $email = $user_info['emails'][0]['value'];
 
-                $name1 = $user_info['name']['givenName'];
-                $name2 = $user_info['name']['familyName'];
+                // $name1 = $user_info['name']['givenName'];
+                // $name2 = $user_info['name']['familyName'];
 
-                $name = $name1." ".$name2;
+                // $name = $name1." ".$name2;
 
                 // Now that the user is logged in you may want to start some session variables
 
-                $_SESSION["name"]=$name;
-                $_SESSION["email"]=$email;
-		$_SESSION["method"]="Google";
+                $_SESSION["fname"] = $user_info['given_name'];
+                $_SESSION["lname"] = $user_info['family_name'];
+                $_SESSION["email"] = $user_info['email'];
+		$_SESSION["method"] = "Google";
 
                 // You may now want to redirect the user to the home page of your website
-                // header('Location: home.php');
-				#header("Location: connect.php");
-                                print_r ($_SESSION);
+                //header("Location: connect.php");
+                print_r ($_SESSION);
 
-			}
+        }
         catch(Exception $e) {
                 echo $e->getMessage();
                 exit();
