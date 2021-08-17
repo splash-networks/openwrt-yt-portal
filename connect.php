@@ -7,7 +7,7 @@ $mac = $_SESSION["id"];
 $ap = $_SESSION["ap"];
 $method = $_SESSION["method"];
 
-if ($method == "Facebook") {
+if ($method == "Facebook" || $method == "Google") {
   $_SESSION['phone'] = "N/A";
 }
 
@@ -67,7 +67,7 @@ if ($_SESSION["user_type"] == "new" && $_SESSION["method"] == "Form") {
   )");
 
   mysqli_query($con, "INSERT INTO `$table_name` (phone, firstname, lastname, email, mac, method, last_updated) VALUES ('$phone', 'N/A', 'N/A', 'N/A', '$mac', '$method', '$last_updated')");
-} elseif ($_SESSION["user_type"] == "new" && $_SESSION["method"] == "Facebook") {
+} else {
 
   $fname = $_SESSION['fname'];
   $lname = $_SESSION['lname'];
@@ -87,13 +87,6 @@ if ($_SESSION["user_type"] == "new" && $_SESSION["method"] == "Form") {
     PRIMARY KEY (`id`),
     UNIQUE KEY `id_UNIQUE` (`id`)
   )");
-
-  mysqli_query($con, "INSERT INTO `$table_name` (phone, firstname, lastname, email, mac, method, last_updated) VALUES ('$phone', '$fname', '$lname', '$email', '$mac', '$method', '$last_updated')");
-} else {
-  $fname = $_SESSION['fname'];
-  $lname = $_SESSION['lname'];
-  $email = $_SESSION['email'];
-  $phone = $_SESSION['phone'];
 
   mysqli_query($con, "INSERT INTO `$table_name` (phone, firstname, lastname, email, mac, method, last_updated) VALUES ('$phone', '$fname', '$lname', '$email', '$mac', '$method', '$last_updated')");
 }

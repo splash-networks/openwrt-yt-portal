@@ -7,6 +7,8 @@ require __DIR__ . '/vendor/autoload.php';
 $dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . "/../");
 $dotenv->load();
 
+# Facebook login parameters
+
 $fb = new Facebook\Facebook([
   'app_id'                => $_SERVER['APP_ID'],
   'app_secret'            => $_SERVER['APP_SECRET'],
@@ -17,6 +19,14 @@ $helper      = $fb->getRedirectLoginHelper();
 $scope       = array("email");
 $loginUrl    = $helper->getLoginUrl($callBackUrl, $scope);
 
+# Google login parameters
+
+$client_id = $_SERVER['CLIENT_ID'];
+$client_secret = $_SERVER['CLIENT_SECRET'];
+$client_redirect_url = $_SERVER['CLIENT_REDIRECT_URL'];
+
+$google_login_url = 'https://accounts.google.com/o/oauth2/v2/auth?scope=' . urlencode('https://www.googleapis.com/auth/userinfo.profile https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/plus.me') . '&redirect_uri=' . urlencode($client_redirect_url) . '&response_type=code&client_id=' . $client_id . '&access_type=online';
+
 
 if (!isset($_SESSION['id'])) {
   $_SESSION["id"] = $_GET['id'];
@@ -26,9 +36,7 @@ if (!isset($_SESSION['id'])) {
 $_SESSION["user_type"] = "new";
 $_SESSION["method"] = "Form";
 
-/*
-Checking DB to see if user exists or not.
-*/
+# Checking DB to see if user exists or not.
 
 $host_ip = $_SERVER['HOST_IP'];
 $db_user = $_SERVER['DB_USER'];

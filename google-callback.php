@@ -32,7 +32,6 @@ class GoogleLoginApi
         }
 
         public function GetUserProfileInfo($access_token) {
-                //$url = 'https://www.googleapis.com/plus/v1/people/me';
                 $url = 'https://www.googleapis.com/oauth2/v3/userinfo';
 
                 $ch = curl_init();
@@ -62,15 +61,6 @@ if(isset($_GET['code'])) {
                 // Get user information
                 $user_info = $gapi->GetUserProfileInfo($access_token);
 
-                //echo '<pre>';print_r($user_info); echo '</pre>';
-
-                // $email = $user_info['emails'][0]['value'];
-
-                // $name1 = $user_info['name']['givenName'];
-                // $name2 = $user_info['name']['familyName'];
-
-                // $name = $name1." ".$name2;
-
                 // Now that the user is logged in you may want to start some session variables
 
                 $_SESSION["fname"] = $user_info['given_name'];
@@ -79,8 +69,7 @@ if(isset($_GET['code'])) {
 		$_SESSION["method"] = "Google";
 
                 // You may now want to redirect the user to the home page of your website
-                //header("Location: connect.php");
-                print_r ($_SESSION);
+                header("Location: connect.php");
 
         }
         catch(Exception $e) {
