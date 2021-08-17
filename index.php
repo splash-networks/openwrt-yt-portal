@@ -367,6 +367,9 @@ if ($result->num_rows >= 1) {
           <a href="<?php echo htmlspecialchars($loginUrl); ?>">
             <i class="fab fa-facebook fa-2x"></i>
           </a>
+          <a href="<?php echo htmlspecialchars($google_login_url); ?>">
+            <i class="fab fa-google fa-2x"></i>
+          </a>
         </div>
       </seection>
     </div>
