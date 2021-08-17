@@ -67,14 +67,6 @@
   margin-bottom: 10px;
 }
 
-#social
-{
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
-  align-items: center;
-}
-
 #logintext
 {
   margin-top: 5px;
