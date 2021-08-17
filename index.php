@@ -362,6 +362,7 @@ if ($result->num_rows >= 1) {
         </div>
         <br>
         <div id="logintext" class="content has-text-centered is-size-5 has-text-weight-bold">Or login using:</div>
+        <br>
         <div class="container has-text-centered">
             <a href="<?php echo htmlspecialchars($loginUrl); ?>">
               <i class="fab fa-facebook fa-2x"></i>
