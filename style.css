@@ -1,6 +1,6 @@
-/*
+
     *{ border: 1px solid red; }
-*/
+
 
 .page
 {
@@ -85,6 +85,16 @@
   #logo
   {
     max-width: 10%;
+  }
+
+  .main
+  {
+    height: 70%;
+  }
+
+  .foot
+  {
+    height: 10%;
   }
 
   #login
