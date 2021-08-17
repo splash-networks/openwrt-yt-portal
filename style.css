@@ -73,9 +73,29 @@
   margin-bottom: 5px;
 }
 
+/* Media Query for iPads */
+
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px)
+{
+  #logo
+  {
+    max-width: 20%;
+  }
+
+  #logintext
+  {
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
+}
+
 /* Media Query for Desktops */
 
-@media only screen and (min-width: 768px)
+@media only screen   
+and (min-width: 1030px)   
+and (max-width: 1366px)  
 {
   html
   {
@@ -108,22 +128,4 @@
     margin-bottom: 15px;
   }
 
-}
-
-/* Media Query for iPads */
-
-@media only screen 
-and (min-device-width : 768px) 
-and (max-device-width : 1024px)
-{
-  #logo
-  {
-    max-width: 20%;
-  }
-
-  #logintext
-  {
-    margin-top: 15px;
-    margin-bottom: 15px;
-  }
 }
