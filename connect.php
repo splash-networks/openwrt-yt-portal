@@ -126,10 +126,6 @@ mysqli_close($con);
       </seection>
     </div>
 
-    <div class="foot">
-      <div id="margin_zero" class="content has-text-centered is-size-6">Powered by <?php echo htmlspecialchars($business_name); ?></div>
-      <div id="margin_zero" class="content has-text-centered is-size-6">(C) Copyright <?php echo htmlspecialchars($current_year); ?></div>
-    </div>
   </div>
 
 </body>

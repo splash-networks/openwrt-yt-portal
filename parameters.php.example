@@ -12,7 +12,4 @@ $site_id = "";
 #Friendly name
 $business_name = "";
 
-#Current year
-$current_year = "";
-
 ?>

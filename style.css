@@ -23,20 +23,10 @@
 .main
 {
   display: flex;
-  height: 60%;
+  height: 80%;
   flex-wrap: wrap;
   flex-direction: column;
   align-items: center;
-}
-
-.foot
-{
-  display: flex;
-  height: 20%;
-  flex-wrap: wrap;
-  flex-direction: column;
-  align-items: center;
-  visibility: hidden;
 }
 
 #logo
@@ -110,12 +100,7 @@ and (max-width: 1366px)
 
   .main
   {
-    height: 70%;
-  }
-
-  .foot
-  {
-    height: 10%;
+    height: 80%;
   }
 
   #login
