@@ -37,11 +37,6 @@
   margin-right: auto;
 }
 
-#gap
-{
-  margin-top: 5px;
-}
-
 #login
 {
   margin-bottom: 5px;
@@ -90,7 +85,6 @@ and (max-width: 1366px)
 {
   html
   {
-    overflow: hidden;
   }
 
   #logo

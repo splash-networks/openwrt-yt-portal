@@ -7,6 +7,11 @@ $mac = $_SESSION["id"];
 $ap = $_SESSION["ap"];
 $method = $_SESSION["method"];
 
+$fname = $_SESSION['fname'];
+$lname = $_SESSION['lname'];
+$email = $_SESSION['email'];
+$phone = $_SESSION['phone'];
+
 if ($method == "Facebook" || $method == "Google") {
   $_SESSION['phone'] = "N/A";
 }
@@ -50,8 +55,6 @@ if (mysqli_connect_errno()) {
 
 if ($_SESSION["user_type"] == "new" && $_SESSION["method"] == "Form") {
 
-  $phone = $_SESSION['phone'];
-
   mysqli_query($con, "
   CREATE TABLE IF NOT EXISTS `$table_name` (
     `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -59,6 +62,7 @@ if ($_SESSION["user_type"] == "new" && $_SESSION["method"] == "Form") {
     `firstname` varchar(45) NOT NULL,
     `lastname` varchar(45) NOT NULL,
     `email` varchar(45) NOT NULL,
+    `dob` varchar(45) NOT NULL,
     `mac` varchar(45) NOT NULL,
     `method` varchar(45) NOT NULL,
     `last_updated` varchar(45) NOT NULL,
@@ -69,11 +73,6 @@ if ($_SESSION["user_type"] == "new" && $_SESSION["method"] == "Form") {
   mysqli_query($con, "INSERT INTO `$table_name` (phone, firstname, lastname, email, mac, method, last_updated) VALUES ('$phone', 'N/A', 'N/A', 'N/A', '$mac', '$method', '$last_updated')");
 } else {
 
-  $fname = $_SESSION['fname'];
-  $lname = $_SESSION['lname'];
-  $email = $_SESSION['email'];
-  $phone = $_SESSION['phone'];
-
   mysqli_query($con, "
   CREATE TABLE IF NOT EXISTS `$table_name` (
     `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -81,6 +80,7 @@ if ($_SESSION["user_type"] == "new" && $_SESSION["method"] == "Form") {
     `firstname` varchar(45) NOT NULL,
     `lastname` varchar(45) NOT NULL,
     `email` varchar(45) NOT NULL,
+    `dob` varchar(45) NOT NULL,
     `mac` varchar(45) NOT NULL,
     `method` varchar(45) NOT NULL,
     `last_updated` varchar(45) NOT NULL,
@@ -88,7 +88,7 @@ if ($_SESSION["user_type"] == "new" && $_SESSION["method"] == "Form") {
     UNIQUE KEY `id_UNIQUE` (`id`)
   )");
 
-  mysqli_query($con, "INSERT INTO `$table_name` (phone, firstname, lastname, email, mac, method, last_updated) VALUES ('$phone', '$fname', '$lname', '$email', '$mac', '$method', '$last_updated')");
+  mysqli_query($con, "INSERT INTO `$table_name` (phone, firstname, lastname, email, mac, method, last_updated) VALUES ('$phone', '$fname', '$lname', '$email', 'N/A', '$mac', '$method', '$last_updated')");
 }
 
 mysqli_close($con);

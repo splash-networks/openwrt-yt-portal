@@ -97,9 +97,45 @@ if ($result->num_rows >= 1) {
     <div class="main">
       <seection class="section">
         <div class="container">
-          <div id="login" class="content is-size-5 has-text-centered has-text-weight-bold">Enter your phone number</div>
-          <div id="gap" class="content is-size-6"></div>
+          <div id="login" class="content is-size-5 has-text-centered has-text-weight-bold">Enter your details</div>
+          <br>
           <form id="verify" method="post" action="verify.php">
+
+            <div class="field">
+              <div class="control has-icons-left">
+                <input class="input" type="text" id="form_font" name="name" placeholder="First Name" required>
+                <span class="icon is-small is-left">
+                  <i class="fas fa-user"></i>
+                </span>
+              </div>
+            </div>
+            
+            <div class="field">
+              <div class="control has-icons-left">
+                <input class="input" type="text" id="form_font" name="lname" placeholder="Last Name" required>
+                <span class="icon is-small is-left">
+                  <i class="fas fa-user"></i>
+                </span>
+              </div>
+            </div>
+
+            <div class="field">
+              <div class="control has-icons-left">
+                <input class="input" type="email" id="form_font" name="email" placeholder="Email" required>
+                <span class="icon is-small is-left">
+                  <i class="fas fa-envelope"></i>
+                </span>
+              </div>
+            </div>
+
+            <div class="field">
+              <div class="control has-icons-left">
+                <input class="input" type="text" id="form_font" name="dob" placeholder="Date of Birth" onfocus="(this.type='date')" required>
+                <span class="icon is-small is-left">
+                  <i class="fas fa-calendar"></i>
+                </span>
+              </div>
+            </div>
 
             <div class="field has-addons">
               <p class="control">
@@ -348,14 +384,22 @@ if ($result->num_rows >= 1) {
                   </select>
                 </span>
               </p>
-
               <p class="control">
                 <input class="input" type="tel" id="phone_number" name="phone_number" placeholder="Phone Number">
               </p>
-
             </div>
+            <br>
+            <div class="columns is-centered is-mobile">
+              <div class="control">
+                <label class="checkbox">
+                    <input type="checkbox" required>
+                    I agree to the <a href="policy.php">Terms of Use</a>
+                </label>
+              </div>
+            </div>
+
             <div class="buttons is-centered">
-              <button id="test" class="button is-danger">Verify Phone Number</button>
+              <button id="test" class="button is-danger">Connect</button>
             </div>
 
           </form>
@@ -364,10 +408,10 @@ if ($result->num_rows >= 1) {
         <div id="logintext" class="content has-text-centered is-size-5 has-text-weight-bold">Or login using:</div>
         <br>
         <div class="container has-text-centered">
-            <a href="<?php echo htmlspecialchars($loginUrl); ?>">
+            <a href="<?php echo htmlspecialchars($loginUrl); ?>">FB
               <i class="fab fa-facebook fa-2x"></i>
             </a>
-            <a href="<?php echo htmlspecialchars($google_login_url); ?>">
+            <a href="<?php echo htmlspecialchars($google_login_url); ?>">Google
               <i class="fab fa-google fa-2x"></i>
             </a>
         </div>
