@@ -58,7 +58,9 @@ if ($result->num_rows >= 1) {
   $_SESSION["fname"] = $row[2];
   $_SESSION["lname"] = $row[3];
   $_SESSION["email"] = $row[4];
-  $_SESSION["method"] = $row[6];
+  $_SESSION["dob"] = $row[5];
+  $_SESSION["mac"] = $row[6];
+  $_SESSION["method"] = $row[7];
 
   mysqli_close($con);
 
