@@ -55,43 +55,22 @@ if (mysqli_connect_errno()) {
   echo "Failed to connect to SQL: " . mysqli_connect_error();
 }
 
-if ($_SESSION["user_type"] == "new" && $_SESSION["method"] == "Form") {
+mysqli_query($con, "
+CREATE TABLE IF NOT EXISTS `$table_name` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `phone` varchar(45) NOT NULL,
+  `firstname` varchar(45) NOT NULL,
+  `lastname` varchar(45) NOT NULL,
+  `email` varchar(45) NOT NULL,
+  `dob` varchar(45) NOT NULL,
+  `mac` varchar(45) NOT NULL,
+  `method` varchar(45) NOT NULL,
+  `last_updated` varchar(45) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `id_UNIQUE` (`id`)
+)");
 
-  mysqli_query($con, "
-  CREATE TABLE IF NOT EXISTS `$table_name` (
-    `id` int(11) NOT NULL AUTO_INCREMENT,
-    `phone` varchar(45) NOT NULL,
-    `firstname` varchar(45) NOT NULL,
-    `lastname` varchar(45) NOT NULL,
-    `email` varchar(45) NOT NULL,
-    `dob` varchar(45) NOT NULL,
-    `mac` varchar(45) NOT NULL,
-    `method` varchar(45) NOT NULL,
-    `last_updated` varchar(45) NOT NULL,
-    PRIMARY KEY (`id`),
-    UNIQUE KEY `id_UNIQUE` (`id`)
-  )");
-
-  mysqli_query($con, "INSERT INTO `$table_name` (phone, firstname, lastname, email, mac, method, last_updated) VALUES ('$phone', '$fname', '$lname', '$email', '$dob', '$mac', '$method', '$last_updated')");
-} else {
-
-  mysqli_query($con, "
-  CREATE TABLE IF NOT EXISTS `$table_name` (
-    `id` int(11) NOT NULL AUTO_INCREMENT,
-    `phone` varchar(45) NOT NULL,
-    `firstname` varchar(45) NOT NULL,
-    `lastname` varchar(45) NOT NULL,
-    `email` varchar(45) NOT NULL,
-    `dob` varchar(45) NOT NULL,
-    `mac` varchar(45) NOT NULL,
-    `method` varchar(45) NOT NULL,
-    `last_updated` varchar(45) NOT NULL,
-    PRIMARY KEY (`id`),
-    UNIQUE KEY `id_UNIQUE` (`id`)
-  )");
-
-  mysqli_query($con, "INSERT INTO `$table_name` (phone, firstname, lastname, email, mac, method, last_updated) VALUES ('$phone', '$fname', '$lname', '$email', '$dob', '$mac', '$method', '$last_updated')");
-}
+mysqli_query($con, "INSERT INTO `$table_name` (phone, firstname, lastname, email, dob, mac, method, last_updated) VALUES ('$phone', '$fname', '$lname', '$email', '$dob', '$mac', '$method', '$last_updated')");
 
 mysqli_close($con);
 
