@@ -7,14 +7,16 @@ $mac = $_SESSION["id"];
 $ap = $_SESSION["ap"];
 $method = $_SESSION["method"];
 
+if ($method == "Facebook" || $method == "Google") {
+  $_SESSION['phone'] = "N/A";
+  $_SESSION['dob'] = "N/A";
+}
+
 $fname = $_SESSION['fname'];
 $lname = $_SESSION['lname'];
 $email = $_SESSION['email'];
+$dob = $_SESSION['dob'];
 $phone = $_SESSION['phone'];
-
-if ($method == "Facebook" || $method == "Google") {
-  $_SESSION['phone'] = "N/A";
-}
 
 $last_updated = date("Y-m-d H:i:s");
 
@@ -70,7 +72,7 @@ if ($_SESSION["user_type"] == "new" && $_SESSION["method"] == "Form") {
     UNIQUE KEY `id_UNIQUE` (`id`)
   )");
 
-  mysqli_query($con, "INSERT INTO `$table_name` (phone, firstname, lastname, email, mac, method, last_updated) VALUES ('$phone', 'N/A', 'N/A', 'N/A', '$mac', '$method', '$last_updated')");
+  mysqli_query($con, "INSERT INTO `$table_name` (phone, firstname, lastname, email, mac, method, last_updated) VALUES ('$phone', '$fname', '$lname', '$email', '$dob', '$mac', '$method', '$last_updated')");
 } else {
 
   mysqli_query($con, "
@@ -88,7 +90,7 @@ if ($_SESSION["user_type"] == "new" && $_SESSION["method"] == "Form") {
     UNIQUE KEY `id_UNIQUE` (`id`)
   )");
 
-  mysqli_query($con, "INSERT INTO `$table_name` (phone, firstname, lastname, email, mac, method, last_updated) VALUES ('$phone', '$fname', '$lname', '$email', 'N/A', '$mac', '$method', '$last_updated')");
+  mysqli_query($con, "INSERT INTO `$table_name` (phone, firstname, lastname, email, mac, method, last_updated) VALUES ('$phone', '$fname', '$lname', '$email', '$dob', '$mac', '$method', '$last_updated')");
 }
 
 mysqli_close($con);
