@@ -103,7 +103,7 @@ if ($result->num_rows >= 1) {
 
             <div class="field">
               <div class="control has-icons-left">
-                <input class="input" type="text" id="form_font" name="name" placeholder="First Name" required>
+                <input class="input" type="text" id="form_font" name="fname" placeholder="First Name" required>
                 <span class="icon is-small is-left">
                   <i class="fas fa-user"></i>
                 </span>
