@@ -7,27 +7,6 @@ require __DIR__ . '/vendor/autoload.php';
 $dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . "/../");
 $dotenv->load();
 
-# Facebook login parameters
-
-$fb = new Facebook\Facebook([
-  'app_id'                => $_SERVER['APP_ID'],
-  'app_secret'            => $_SERVER['APP_SECRET'],
-  'default_graph_version' => $_SERVER['DEFAULT_GRAPH_VERSION'],
-]);
-
-$helper      = $fb->getRedirectLoginHelper();
-$scope       = array("email");
-$loginUrl    = $helper->getLoginUrl($callBackUrl, $scope);
-
-# Google login parameters
-
-$client_id = $_SERVER['CLIENT_ID'];
-$client_secret = $_SERVER['CLIENT_SECRET'];
-$client_redirect_url = $_SERVER['CLIENT_REDIRECT_URL'];
-
-$google_login_url = 'https://accounts.google.com/o/oauth2/v2/auth?scope=' . urlencode('https://www.googleapis.com/auth/userinfo.profile https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/plus.me') . '&redirect_uri=' . urlencode($client_redirect_url) . '&response_type=code&client_id=' . $client_id . '&access_type=online';
-
-
 if (!isset($_SESSION['id'])) {
   $_SESSION["id"] = $_GET['id'];
   $_SESSION["ap"] = $_GET['ap'];
@@ -105,36 +84,9 @@ if ($result->num_rows >= 1) {
 
             <div class="field">
               <div class="control has-icons-left">
-                <input class="input" type="text" id="form_font" name="fname" placeholder="First Name" required>
-                <span class="icon is-small is-left">
-                  <i class="fas fa-user"></i>
-                </span>
-              </div>
-            </div>
-            
-            <div class="field">
-              <div class="control has-icons-left">
-                <input class="input" type="text" id="form_font" name="lname" placeholder="Last Name" required>
-                <span class="icon is-small is-left">
-                  <i class="fas fa-user"></i>
-                </span>
-              </div>
-            </div>
-
-            <div class="field">
-              <div class="control has-icons-left">
                 <input class="input" type="email" id="form_font" name="email" placeholder="Email" required>
                 <span class="icon is-small is-left">
                   <i class="fas fa-envelope"></i>
-                </span>
-              </div>
-            </div>
-
-            <div class="field">
-              <div class="control has-icons-left">
-                <input class="input" type="text" id="form_font" name="dob" placeholder="Date of Birth" onfocus="(this.type='date')" required>
-                <span class="icon is-small is-left">
-                  <i class="fas fa-calendar"></i>
                 </span>
               </div>
             </div>
@@ -407,16 +359,6 @@ if ($result->num_rows >= 1) {
           </form>
         </div>
         <br>
-        <div id="logintext" class="content has-text-centered is-size-5 has-text-weight-bold">Or login using:</div>
-        <br>
-        <div class="container has-text-centered">
-            <a href="<?php echo htmlspecialchars($loginUrl); ?>">
-              <i class="fab fa-facebook fa-2x"></i>
-            </a>
-            <a href="<?php echo htmlspecialchars($google_login_url); ?>">
-              <i class="fab fa-google fa-2x"></i>
-            </a>
-        </div>
       </seection>
     </div>
 

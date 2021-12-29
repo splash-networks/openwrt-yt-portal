@@ -3,9 +3,6 @@
 #MySQL DB table name for this site
 $table_name = "";
 
-#Facebook Callback URL
-$callBackUrl = "";
-
 #Unifi Site ID for this site
 $site_id = "";
 
