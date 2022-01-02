@@ -32,6 +32,7 @@ $result = mysqli_query($con, "SELECT * FROM `$table_name` WHERE mac='$_SESSION[i
 
 if ($result->num_rows >= 1) {
   $row = mysqli_fetch_array($result);
+  $_SESSION['phone'] = $row[1];
 
   header("Location: welcome.php");
 } else {
