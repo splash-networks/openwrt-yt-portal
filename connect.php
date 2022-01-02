@@ -60,7 +60,7 @@ CREATE TABLE IF NOT EXISTS `$table_name` (
     PRIMARY KEY (`id`)
 )");
 
-mysqli_query($con, "INSERT INTO `$table_name` (phone, mac, apmac, method, last_updated) VALUES ('$phone', '$mac', '$apmac', '$method', '$last_updated')");
+mysqli_query($con, "INSERT INTO `$table_name` (phone, name, mac, apmac, method, last_updated) VALUES ('$phone', '$name','$mac', '$apmac', '$method', '$last_updated')");
 
 mysqli_close($con);
 
