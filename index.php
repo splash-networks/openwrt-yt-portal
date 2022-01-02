@@ -71,14 +71,14 @@ if ($result->num_rows >= 1) {
           <br>
           <form id="verify" method="post" action="verify.php">
 
-            <div class="field">
-              <div class="control has-icons-left">
-                <input class="input" type="email" id="form_font" name="email" placeholder="Email" required>
-                <span class="icon is-small is-left">
-                  <i class="fas fa-envelope"></i>
-                </span>
-              </div>
-            </div>
+<!--            <div class="field">-->
+<!--              <div class="control has-icons-left">-->
+<!--                <input class="input" type="email" id="form_font" name="email" placeholder="Email" required>-->
+<!--                <span class="icon is-small is-left">-->
+<!--                  <i class="fas fa-envelope"></i>-->
+<!--                </span>-->
+<!--              </div>-->
+<!--            </div>-->
 
             <div class="field has-addons">
               <p class="control">

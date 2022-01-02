@@ -7,7 +7,7 @@ $mac = $_SESSION["id"];
 $ap = $_SESSION["ap"];
 $method = $_SESSION["method"];
 
-$email = $_SESSION['email'];
+//$email = $_SESSION['email'];
 $phone = $_SESSION['phone'];
 
 $last_updated = date("Y-m-d H:i:s");
@@ -51,14 +51,13 @@ mysqli_query($con, "
 CREATE TABLE IF NOT EXISTS `$table_name` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `phone` varchar(45) NOT NULL,
-  `email` varchar(45) NOT NULL,
   `mac` varchar(45) NOT NULL,
   `method` varchar(45) NOT NULL,
   `last_updated` varchar(45) NOT NULL,
   PRIMARY KEY (`id`)
 )");
 
-mysqli_query($con, "INSERT INTO `$table_name` (phone, email, mac, method, last_updated) VALUES ('$phone', '$email', '$mac', '$method', '$last_updated')");
+mysqli_query($con, "INSERT INTO `$table_name` (phone, mac, method, last_updated) VALUES ('$phone', '$mac', '$method', '$last_updated')");
 
 mysqli_close($con);
 
