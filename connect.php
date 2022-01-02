@@ -4,7 +4,7 @@ session_start();
 include 'parameters.php';
 
 $mac = $_SESSION["id"];
-$ap = $_SESSION["ap"];
+$apmac = $_SESSION["ap"];
 $method = $_SESSION["method"];
 
 //$email = $_SESSION['email'];
@@ -49,15 +49,16 @@ if (mysqli_connect_errno()) {
 
 mysqli_query($con, "
 CREATE TABLE IF NOT EXISTS `$table_name` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `phone` varchar(45) NOT NULL,
-  `mac` varchar(45) NOT NULL,
-  `method` varchar(45) NOT NULL,
-  `last_updated` varchar(45) NOT NULL,
-  PRIMARY KEY (`id`)
+    `id` int(11) NOT NULL AUTO_INCREMENT,
+    `phone` varchar(16) NOT NULL,
+    `mac` varchar(17) NOT NULL,
+    `apmac` varchar(17) NOT NULL,
+    `method` varchar(10) NOT NULL,
+    `last_updated` datetime NOT NULL,
+    PRIMARY KEY (`id`)
 )");
 
-mysqli_query($con, "INSERT INTO `$table_name` (phone, mac, method, last_updated) VALUES ('$phone', '$mac', '$method', '$last_updated')");
+mysqli_query($con, "INSERT INTO `$table_name` (phone, mac, apmac, method, last_updated) VALUES ('$phone', '$mac', '$apmac', '$method', '$last_updated')");
 
 mysqli_close($con);
 
