@@ -11,10 +11,8 @@ enter code received on their phone. Some basic error handling is also given usin
 $phone = $_POST['country_code'] . $_POST['phone_number'];
 
 $_SESSION['phone'] = trim($phone);
-$_SESSION['fname'] = $_POST['fname'];
-$_SESSION['lname'] = $_POST['lname'];
+$_SESSION['name'] = $_POST['name'];
 $_SESSION['email'] = $_POST['email'];
-$_SESSION['dob'] = $_POST['dob'];
 
 require __DIR__ . '/vendor/autoload.php';
 

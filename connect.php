@@ -7,6 +7,7 @@ $mac = $_SESSION["id"];
 $apmac = $_SESSION["ap"];
 $method = $_SESSION["method"];
 
+$name = $_SESSION['name'];
 //$email = $_SESSION['email'];
 $phone = $_SESSION['phone'];
 
@@ -51,6 +52,7 @@ mysqli_query($con, "
 CREATE TABLE IF NOT EXISTS `$table_name` (
     `id` int(11) NOT NULL AUTO_INCREMENT,
     `phone` varchar(16) NOT NULL,
+    `name` varchar(100) NOT NULL,
     `mac` varchar(17) NOT NULL,
     `apmac` varchar(17) NOT NULL,
     `method` varchar(10) NOT NULL,

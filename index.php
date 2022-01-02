@@ -1,43 +1,43 @@
 <?php
 session_start();
 
-include 'parameters.php';
-require __DIR__ . '/vendor/autoload.php';
-
-$dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . "/../");
-$dotenv->load();
-
-if (!isset($_SESSION['id'])) {
-  $_SESSION["id"] = $_GET['id'];
-  $_SESSION["ap"] = $_GET['ap'];
-}
-
-$_SESSION["user_type"] = "new";
-$_SESSION["method"] = "Form";
-
-# Checking DB to see if user exists or not.
-
-$host_ip = $_SERVER['HOST_IP'];
-$db_user = $_SERVER['DB_USER'];
-$db_pass = $_SERVER['DB_PASS'];
-$db_name = $_SERVER['DB_NAME'];
-
-$con = mysqli_connect($host_ip, $db_user, $db_pass, $db_name);
-
-if (mysqli_connect_errno()) {
-  echo "Failed to connect to SQL: " . mysqli_connect_error();
-}
-
-$result = mysqli_query($con, "SELECT * FROM `$table_name` WHERE mac='$_SESSION[id]'");
-
-if ($result->num_rows >= 1) {
-  $row = mysqli_fetch_array($result);
-  $_SESSION['phone'] = $row[1];
-
-  header("Location: welcome.php");
-} else {
-  mysqli_close($con);
-}
+//include 'parameters.php';
+//require __DIR__ . '/vendor/autoload.php';
+//
+//$dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . "/../");
+//$dotenv->load();
+//
+//if (!isset($_SESSION['id'])) {
+//  $_SESSION["id"] = $_GET['id'];
+//  $_SESSION["ap"] = $_GET['ap'];
+//}
+//
+//$_SESSION["user_type"] = "new";
+//$_SESSION["method"] = "Form";
+//
+//# Checking DB to see if user exists or not.
+//
+//$host_ip = $_SERVER['HOST_IP'];
+//$db_user = $_SERVER['DB_USER'];
+//$db_pass = $_SERVER['DB_PASS'];
+//$db_name = $_SERVER['DB_NAME'];
+//
+//$con = mysqli_connect($host_ip, $db_user, $db_pass, $db_name);
+//
+//if (mysqli_connect_errno()) {
+//  echo "Failed to connect to SQL: " . mysqli_connect_error();
+//}
+//
+//$result = mysqli_query($con, "SELECT * FROM `$table_name` WHERE mac='$_SESSION[id]'");
+//
+//if ($result->num_rows >= 1) {
+//  $row = mysqli_fetch_array($result);
+//  $_SESSION['phone'] = $row[1];
+//
+//  header("Location: welcome.php");
+//} else {
+//  mysqli_close($con);
+//}
 
 ?>
 <!doctype html>
@@ -80,6 +80,15 @@ if ($result->num_rows >= 1) {
 <!--                </span>-->
 <!--              </div>-->
 <!--            </div>-->
+
+            <div class="field">
+                <div class="control has-icons-left">
+                    <input class="input" type="text" id="form_font" name="name" placeholder="Name" required>
+                    <span class="icon is-small is-left">
+                        <i class="fas fa-user"></i>
+                    </span>
+                </div>
+            </div>
 
             <div class="field has-addons">
               <p class="control">
@@ -329,7 +338,7 @@ if ($result->num_rows >= 1) {
                 </span>
               </p>
               <p class="control">
-                <input class="input" type="tel" id="phone_number" name="phone_number" placeholder="Phone Number">
+                <input class="input" type="tel" id="phone_number" name="phone_number" placeholder="Phone Number" minlength="8" maxlength="15" required>
               </p>
             </div>
             <br>
