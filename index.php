@@ -75,7 +75,7 @@ if ($result->num_rows >= 1) {
                 <ul>
                     <li class="is-active" id="tab_sms">
                         <a>
-                            <span class="icon is-small"><i class="fas fa-image" aria-hidden="true"></i></span>
+                            <span class="icon is-small"><i class="fas fa-mobile" aria-hidden="true"></i></span>
                             <span>SMS</span>
                         </a>
                     </li>
