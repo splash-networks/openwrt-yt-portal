@@ -19,6 +19,7 @@ $verification_check = $twilio->verify->v2->services($serviceid)
         ["to" => "nasirhafeez2002@gmail.com"]
     );
 
-print($verification_check->sid);
+//print($verification_check->sid);
+echo $verification_check->status;
 
 ?>
