@@ -15,6 +15,6 @@ $twilio = new Client($sid, $token);
 
 $verification = $twilio->verify->v2->services($serviceid)
     ->verifications
-    ->create("nasirhafeez2002@gmail.com", "email");
+    ->create("nasir@nasirhafeez.com", "email");
 
 ?>

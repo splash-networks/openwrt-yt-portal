@@ -16,10 +16,9 @@ $twilio = new Client($sid, $token);
 $verification_check = $twilio->verify->v2->services($serviceid)
     ->verificationChecks
     ->create("574860", // code
-        ["to" => "nasirhafeez2002@gmail.com"]
+        ["to" => "nasir@nasirhafeez.com"]
     );
 
-//print($verification_check->sid);
 echo $verification_check->status;
 
 ?>
