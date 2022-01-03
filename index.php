@@ -73,19 +73,19 @@ if ($result->num_rows >= 1) {
           <form id="verify" method="post" action="verify.php">
 
             <div class="field">
-              <div class="control has-icons-left">
-                <input class="input" type="email" id="form_font" name="email" placeholder="Email" required>
-                <span class="icon is-small is-left">
-                  <i class="fas fa-envelope"></i>
-                </span>
-              </div>
-            </div>
-
-            <div class="field">
                 <div class="control has-icons-left">
                     <input class="input" type="text" id="form_font" name="name" placeholder="Name" required>
                     <span class="icon is-small is-left">
                         <i class="fas fa-user"></i>
+                    </span>
+                </div>
+            </div>
+
+            <div class="field">
+                <div class="control has-icons-left">
+                    <input class="input" type="email" id="form_font" name="email" placeholder="Email" required>
+                    <span class="icon is-small is-left">
+                        <i class="fas fa-envelope"></i>
                     </span>
                 </div>
             </div>
