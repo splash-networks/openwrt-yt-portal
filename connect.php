@@ -16,9 +16,6 @@ if ($method == 'sms') {
     $email = $_SESSION['address'];
 }
 
-echo $method . "\n";
-print_r($_SESSION);
-
 $last_updated = date("Y-m-d H:i:s");
 
 require __DIR__ . '/vendor/autoload.php';
