@@ -24,7 +24,7 @@ $verification_check = $twilio->verify->v2->services($serviceid)
     ->verificationChecks
     ->create(
         $_SESSION['code'], // code
-        ["to" => $_SESSION['phone']]
+        ["to" => $_SESSION['address']]
     );
 
 if ($verification_check->status == "approved") {

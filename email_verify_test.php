@@ -13,8 +13,6 @@ use Twilio\Rest\Client;
 
 $twilio = new Client($sid, $token);
 
-$verification = $twilio->verify->v2->services($serviceid)
-    ->verifications
-    ->create("nhafeez3@gatech.edu", "email");
+
 
 ?>

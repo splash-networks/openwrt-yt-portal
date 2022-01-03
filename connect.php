@@ -6,17 +6,17 @@ include 'parameters.php';
 $mac = $_SESSION["id"];
 $apmac = $_SESSION["ap"];
 $method = $_SESSION["method"];
-
 $name = $_SESSION['name'];
-//$email = $_SESSION['email'];
-$phone = $_SESSION['phone'];
+
+if ($method == 'sms') {
+    $phone = $_SESSION['address'];
+    $email = "N/A";
+} else {
+    $phone = "N/A";
+    $email = $_SESSION['address'];
+}
 
 $last_updated = date("Y-m-d H:i:s");
-
-/*
-Collecting the data entered by users of type "new" or "repeat_old" in form. It will be posted to the DB.
-For "repeat_recent" type users no change will be made in the DB, they'll be authorized directly
-*/
 
 require __DIR__ . '/vendor/autoload.php';
 
@@ -60,7 +60,7 @@ CREATE TABLE IF NOT EXISTS `$table_name` (
     PRIMARY KEY (`id`)
 )");
 
-mysqli_query($con, "INSERT INTO `$table_name` (phone, name, mac, apmac, method, last_updated) VALUES ('$phone', '$name','$mac', '$apmac', '$method', '$last_updated')");
+mysqli_query($con, "INSERT INTO `$table_name` (phone, email, name, mac, apmac, method, last_updated) VALUES ('$phone','$email','$name','$mac', '$apmac', '$method', '$last_updated')");
 
 mysqli_close($con);
 

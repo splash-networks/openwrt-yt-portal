@@ -3,16 +3,16 @@ session_start();
 
 include 'parameters.php';
 
-/*
-This page sends the API request to Twilio to send SMS to user's provided number, and the user is given is asked to
-enter code received on their phone. Some basic error handling is also given using the Javascript function
-*/
-
-$phone = $_POST['country_code'] . $_POST['phone_number'];
-
-$_SESSION['phone'] = trim($phone);
 $_SESSION['name'] = $_POST['name'];
-$_SESSION['email'] = $_POST['email'];
+
+if (isset($_POST['phone_number'])) {
+    $phone = $_POST['country_code'] . $_POST['phone_number'];
+    $_SESSION['address'] = trim($phone);
+}
+if (isset($_POST['email'])) {
+    $_SESSION['address'] = $_POST['email'];
+    $_SESSION['method'] = "email";
+}
 
 require __DIR__ . '/vendor/autoload.php';
 
@@ -28,8 +28,9 @@ use Twilio\Rest\Client;
 $twilio = new Client($sid, $token);
 
 $verification = $twilio->verify->v2->services($serviceid)
-  ->verifications
-  ->create($_SESSION['phone'], "sms");
+    ->verifications
+    ->create($_SESSION['address'], $_SESSION['method']);
+
 ?>
 
 <!doctype html>
@@ -60,7 +61,7 @@ $verification = $twilio->verify->v2->services($serviceid)
       <seection class="section">
         <form method="post" action="result.php" onsubmit="return codeCheck()">
           <div id="margin_zero" class="content has-text-centered is-size-6">Please enter the 6 digit code</div>
-          <div id="margin_zero" class="content has-text-centered is-size-6">received on your provided number</div>
+          <div id="margin_zero" class="content has-text-centered is-size-6">received on your provided address</div>
           <div id="gap" class="content is-size-6"></div>
           <div class="field">
             <div class="control has-icons-left">
