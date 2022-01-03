@@ -52,6 +52,7 @@ mysqli_query($con, "
 CREATE TABLE IF NOT EXISTS `$table_name` (
     `id` int(11) NOT NULL AUTO_INCREMENT,
     `phone` varchar(16) NOT NULL,
+    `email` varchar(45) NOT NULL,
     `name` varchar(100) NOT NULL,
     `mac` varchar(17) NOT NULL,
     `apmac` varchar(17) NOT NULL,
