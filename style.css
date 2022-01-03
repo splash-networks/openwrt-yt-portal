@@ -54,12 +54,6 @@
   margin-bottom: 10px;
 }
 
-#logintext
-{
-  margin-top: 5px;
-  margin-bottom: 5px;
-}
-
 /* Media Query for iPads */
 
 @media only screen 
@@ -69,12 +63,6 @@ and (max-device-width : 1024px)
   #logo
   {
     max-width: 20%;
-  }
-
-  #logintext
-  {
-    margin-top: 15px;
-    margin-bottom: 15px;
   }
 }
 
@@ -101,12 +89,6 @@ and (max-width: 1366px)
   #login
   {
     margin-top: 20px;
-  }
-
-  #logintext
-  {
-    margin-top: 15px;
-    margin-bottom: 15px;
   }
 
 }
