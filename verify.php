@@ -73,7 +73,7 @@ $verification = $twilio->verify->v2->services($serviceid)
           </div>
           <p class="help is-warning" id="codeError">Code Invalid: not a 6 digit number</p>
           <div class="buttons is-centered">
-            <button id="button_font" class="button is-danger">Verify</button>
+            <button id="button_font" class="button is-link">Verify</button>
           </div>
         </form>
       </seection>

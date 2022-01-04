@@ -14,7 +14,6 @@
 .head
 {
   display: flex;
-  height: 35%;
   flex-wrap: wrap;
   flex-direction: column;
   align-items: center;
@@ -23,7 +22,6 @@
 .main
 {
   display: flex;
-  height: 65%;
   flex-wrap: wrap;
   flex-direction: column;
   align-items: center;
@@ -31,8 +29,7 @@
 
 #logo
 {
-  width: 120px;
-  height: 20px;
+  width: 35%;
   margin-left: auto;
   margin-right: auto;
   display: block;
