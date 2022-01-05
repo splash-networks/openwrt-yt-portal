@@ -18,7 +18,6 @@ mysqli_close($con);
 
 if ($result->num_rows >= 1) {
   $_SESSION['user_type'] = "repeat";
-  header("Location: welcome.php");
 }
 
 ?>
