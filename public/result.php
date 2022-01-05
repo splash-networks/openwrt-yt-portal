@@ -7,9 +7,9 @@ This page runs an API request to Twilio to verify the code provided by the user
 
 $_SESSION['code'] = trim($_POST['code']);
 
-require __DIR__ . '/vendor/autoload.php';
+require __DIR__ . '../vendor/autoload.php';
 
-$dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . "/../");
+$dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . "/Desktop/");
 $dotenv->load();
 
 $sid = $_SERVER['SID'];

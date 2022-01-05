@@ -2,5 +2,5 @@ parameters.php
 composer.lock
 composer.phar
 vendor/
+.idea/
 *.html
-.idea*
