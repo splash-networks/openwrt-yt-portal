@@ -42,7 +42,7 @@ if ($_SESSION['result'] == true) {
             if ($_SESSION['result'] == true) {
             ?>
                 <div id="margin_zero" class="content has-text-centered is-size-6">Great! Your code has been approved!</div>
-                <div id="margin_zero" class="content has-text-centered is-size-6">You'll be automatically redirected</div>
+                <div id="margin_zero" class="content has-text-centered is-size-6">You'll be automatically authorized</div>
                 <div id="margin_zero" class="content has-text-centered is-size-6">in a few moments</div>
             <?php
             } else {
