@@ -27,6 +27,8 @@ if (!isset($_POST['verify'])) {
         ->create($_SESSION['address'], $_SESSION['method']);
 } else {
     $_SESSION['code'] = trim($_POST['code']);
+    $_SESSION['result'] = false;
+
     $verification_check = $twilio->verify->v2->services($serviceid)
         ->verificationChecks
         ->create(
@@ -35,10 +37,9 @@ if (!isset($_POST['verify'])) {
         );
 
     if ($verification_check->status == "approved") {
-        header("Location: verify_pass.php");
-    } else {
-        header("Location: verify_fail.php");
+        $_SESSION['result'] = true;
     }
+    header("Location: verify_result.php");
 }
 
 ?>
