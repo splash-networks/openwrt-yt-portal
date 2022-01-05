@@ -2,17 +2,6 @@
 
 require 'header.php';
 
-$_SESSION['name'] = $_POST['name'];
-
-if (isset($_POST['phone_number'])) {
-    $phone = $_POST['country_code'] . $_POST['phone_number'];
-    $_SESSION['address'] = trim($phone);
-}
-if (isset($_POST['email'])) {
-    $_SESSION['address'] = $_POST['email'];
-    $_SESSION['method'] = "email";
-}
-
 $sid = $_SERVER['SID'];
 $token = $_SERVER['TOKEN'];
 $serviceid = $_SERVER['SERVICEID'];
@@ -21,9 +10,35 @@ use Twilio\Rest\Client;
 
 $twilio = new Client($sid, $token);
 
-$verification = $twilio->verify->v2->services($serviceid)
-    ->verifications
-    ->create($_SESSION['address'], $_SESSION['method']);
+if (!isset($_POST['verify'])) {
+    $_SESSION['name'] = $_POST['name'];
+
+    if (isset($_POST['phone_number'])) {
+        $phone = $_POST['country_code'] . $_POST['phone_number'];
+        $_SESSION['address'] = trim($phone);
+    }
+    if (isset($_POST['email'])) {
+        $_SESSION['address'] = $_POST['email'];
+        $_SESSION['method'] = "email";
+    }
+
+    $verification = $twilio->verify->v2->services($serviceid)
+        ->verifications
+        ->create($_SESSION['address'], $_SESSION['method']);
+} else {
+    $verification_check = $twilio->verify->v2->services($serviceid)
+        ->verificationChecks
+        ->create(
+            $_SESSION['code'], // code
+            ["to" => $_SESSION['address']]
+        );
+
+    if ($verification_check->status == "approved") {
+        header("Location: verify_pass.php");
+    } else {
+        header("Location: verify_fail.php");
+    }
+}
 
 ?>
 
@@ -53,7 +68,7 @@ $verification = $twilio->verify->v2->services($serviceid)
 
     <div class="main">
       <seection class="section">
-        <form method="post" action="result.php" onsubmit="return codeCheck()">
+        <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>" onsubmit="return codeCheck()">
           <div id="margin_zero" class="content has-text-centered is-size-6">Please enter the 6 digit code</div>
           <div id="margin_zero" class="content has-text-centered is-size-6">received on your provided address</div>
           <div id="gap" class="content is-size-6"></div>
@@ -67,7 +82,7 @@ $verification = $twilio->verify->v2->services($serviceid)
           </div>
           <p class="help is-warning" id="codeError">Code Invalid: not a 6 digit number</p>
           <div class="buttons is-centered">
-            <button id="button_font" class="button is-link">Verify</button>
+            <input class="button is-link" type="submit" name="verify" value="Verify">
           </div>
         </form>
       </seection>

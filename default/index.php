@@ -345,7 +345,7 @@ if ($result->num_rows >= 1) {
             </div>
 
             <div class="buttons is-centered">
-                <button id="test" class="button is-link">Connect</button>
+                <button class="button is-link">Connect</button>
             </div>
 
             </form>
@@ -379,7 +379,7 @@ if ($result->num_rows >= 1) {
                 </div>
 
                 <div class="buttons is-centered">
-                    <button id="test" class="button is-link">Connect</button>
+                    <button class="button is-link">Connect</button>
                 </div>
 
             </form>

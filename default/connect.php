@@ -1,6 +1,7 @@
 <?php
 
 require 'header.php';
+include 'config.php';
 
 $mac = $_SESSION["id"];
 $apmac = $_SESSION["ap"];
@@ -30,17 +31,6 @@ $set_debug_mode   = $unifi_connection->set_debug($debug);
 $loginresults     = $unifi_connection->login();
 
 $auth_result = $unifi_connection->authorize_guest($mac, $duration, null, null, null, $ap);
-
-$host_ip = $_SERVER['HOST_IP'];
-$db_user = $_SERVER['DB_USER'];
-$db_pass = $_SERVER['DB_PASS'];
-$db_name = $_SERVER['DB_NAME'];
-
-$con = mysqli_connect($host_ip, $db_user, $db_pass, $db_name);
-
-if (mysqli_connect_errno()) {
-  echo "Failed to connect to SQL: " . mysqli_connect_error();
-}
 
 mysqli_query($con, "
 CREATE TABLE IF NOT EXISTS `$table_name` (
