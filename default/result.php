@@ -9,7 +9,7 @@ $_SESSION['code'] = trim($_POST['code']);
 
 require __DIR__ . '../vendor/autoload.php';
 
-$dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . "/Desktop/");
+$dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . "/../");
 $dotenv->load();
 
 $sid = $_SERVER['SID'];

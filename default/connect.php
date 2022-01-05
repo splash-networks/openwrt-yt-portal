@@ -20,7 +20,7 @@ $last_updated = date("Y-m-d H:i:s");
 
 require __DIR__ . '../vendor/autoload.php';
 
-$dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . "/Desktop/");
+$dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . "/../");
 $dotenv->load();
 
 $controlleruser = $_SERVER['CONTROLLER_USER'];
