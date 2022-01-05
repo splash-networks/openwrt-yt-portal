@@ -48,24 +48,33 @@ if ($result->num_rows >= 1) {
     </div>
 
     <div class="main">
-      <seection class="section">
+      <section class="section">
         <div class="container">
+          <?php
+          if ($_SESSION['user_type'] == "repeat") {
+          ?>
+            <div id="margin_zero" class="content has-text-centered is-size-6">Welcome!</div>
+            <div id="margin_zero" class="content has-text-centered is-size-6">You'll be automatically authorized</div>
+            <div id="margin_zero" class="content has-text-centered is-size-6">on the network in a few moments</div>
+          <?php
+          } else {
+          ?>
           <div id="login" class="content is-size-5 has-text-centered has-text-weight-bold">Enter your details</div>
           <br>
           <div class="tabs is-centered is-toggle is-toggle-rounded">
             <ul>
-                <li class="is-active" id="tab_sms">
-                    <a>
-                        <span class="icon is-small"><i class="fas fa-mobile" aria-hidden="true"></i></span>
-                        <span>SMS</span>
-                    </a>
-                </li>
-                <li id="tab_email">
-                    <a>
-                        <span class="icon is-small"><i class="fas fa-envelope" aria-hidden="true"></i></span>
-                        <span>Email</span>
-                    </a>
-                </li>
+            <li class="is-active" id="tab_sms">
+              <a>
+                <span class="icon is-small"><i class="fas fa-mobile" aria-hidden="true"></i></span>
+                <span>SMS</span>
+              </a>
+            </li>
+            <li id="tab_email">
+              <a>
+                <span class="icon is-small"><i class="fas fa-envelope" aria-hidden="true"></i></span>
+                <span>Email</span>
+              </a>
+            </li>
             </ul>
           </div>
           <form id="verify_sms" method="post" action="verify.php">
@@ -379,9 +388,12 @@ if ($result->num_rows >= 1) {
                 </div>
 
             </form>
+          <?php
+          }
+          ?>
         </div>
         <br>
-      </seection>
+      </section>
     </div>
 
   </div>
