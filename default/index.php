@@ -14,14 +14,11 @@ $_SESSION["method"] = "sms";
 # Checking DB to see if user exists or not.
 
 $result = mysqli_query($con, "SELECT * FROM `$table_name` WHERE mac='$_SESSION[id]'");
+mysqli_close($con);
 
 if ($result->num_rows >= 1) {
-  $row = mysqli_fetch_array($result);
   $_SESSION['user_type'] = "repeat";
-
   header("Location: welcome.php");
-} else {
-  mysqli_close($con);
 }
 
 ?>
@@ -55,23 +52,22 @@ if ($result->num_rows >= 1) {
         <div class="container">
           <div id="login" class="content is-size-5 has-text-centered has-text-weight-bold">Enter your details</div>
           <br>
-
-            <div class="tabs is-centered is-toggle is-toggle-rounded">
-                <ul>
-                    <li class="is-active" id="tab_sms">
-                        <a>
-                            <span class="icon is-small"><i class="fas fa-mobile" aria-hidden="true"></i></span>
-                            <span>SMS</span>
-                        </a>
-                    </li>
-                    <li id="tab_email">
-                        <a>
-                            <span class="icon is-small"><i class="fas fa-envelope" aria-hidden="true"></i></span>
-                            <span>Email</span>
-                        </a>
-                    </li>
-                </ul>
-            </div>
+          <div class="tabs is-centered is-toggle is-toggle-rounded">
+            <ul>
+                <li class="is-active" id="tab_sms">
+                    <a>
+                        <span class="icon is-small"><i class="fas fa-mobile" aria-hidden="true"></i></span>
+                        <span>SMS</span>
+                    </a>
+                </li>
+                <li id="tab_email">
+                    <a>
+                        <span class="icon is-small"><i class="fas fa-envelope" aria-hidden="true"></i></span>
+                        <span>Email</span>
+                    </a>
+                </li>
+            </ul>
+          </div>
           <form id="verify_sms" method="post" action="verify.php">
 
             <div class="field">
