@@ -26,6 +26,7 @@ if (!isset($_POST['verify'])) {
         ->verifications
         ->create($_SESSION['address'], $_SESSION['method']);
 } else {
+    $_SESSION['code'] = trim($_POST['code']);
     $verification_check = $twilio->verify->v2->services($serviceid)
         ->verificationChecks
         ->create(
