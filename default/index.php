@@ -18,6 +18,7 @@ mysqli_close($con);
 
 if ($result->num_rows >= 1) {
   $_SESSION['user_type'] = "repeat";
+  header("Location: welcome.php");
 }
 
 ?>
@@ -49,15 +50,6 @@ if ($result->num_rows >= 1) {
     <div class="main">
       <section class="section">
         <div class="container">
-          <?php
-          if ($_SESSION['user_type'] == "repeat") {
-          ?>
-            <div id="margin_zero" class="content has-text-centered is-size-6">Welcome!</div>
-            <div id="margin_zero" class="content has-text-centered is-size-6">You'll be automatically authorized</div>
-            <div id="margin_zero" class="content has-text-centered is-size-6">on the network in a few moments</div>
-          <?php
-          } else {
-          ?>
           <div id="login" class="content is-size-5 has-text-centered has-text-weight-bold">Enter your details</div>
           <br>
           <div class="tabs is-centered is-toggle is-toggle-rounded">
@@ -387,9 +379,7 @@ if ($result->num_rows >= 1) {
                 </div>
 
             </form>
-          <?php
-          }
-          ?>
+
         </div>
         <br>
       </section>
