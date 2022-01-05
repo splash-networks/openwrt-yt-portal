@@ -56,6 +56,7 @@ if ($result->num_rows >= 1) {
             <div id="margin_zero" class="content has-text-centered is-size-6">You'll be automatically authorized</div>
             <div id="margin_zero" class="content has-text-centered is-size-6">on the network in a few moments</div>
           <?php
+            header("Location: welcome.php");
           } else {
           ?>
           <div id="login" class="content is-size-5 has-text-centered has-text-weight-bold">Enter your details</div>
