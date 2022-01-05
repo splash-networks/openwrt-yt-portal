@@ -1,7 +1,6 @@
 <?php
-session_start();
 
-include '../parameters.php';
+require 'header.php';
 
 ?>
 

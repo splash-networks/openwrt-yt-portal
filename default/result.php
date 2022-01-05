@@ -1,16 +1,12 @@
 <?php
-session_start();
+
+require 'header.php';
 
 /*
 This page runs an API request to Twilio to verify the code provided by the user
 */
 
 $_SESSION['code'] = trim($_POST['code']);
-
-require '../vendor/autoload.php';
-
-$dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . "/../");
-$dotenv->load();
 
 $sid = $_SERVER['SID'];
 $token = $_SERVER['TOKEN'];

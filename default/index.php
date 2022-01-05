@@ -1,11 +1,6 @@
 <?php
-session_start();
 
-include '../parameters.php';
-require '../vendor/autoload.php';
-
-$dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . "/../");
-$dotenv->load();
+require 'header.php';
 
 if (!isset($_SESSION['id'])) {
   $_SESSION["id"] = $_GET['id'];

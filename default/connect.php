@@ -1,7 +1,6 @@
 <?php
-session_start();
 
-include '../parameters.php';
+require 'header.php';
 
 $mac = $_SESSION["id"];
 $apmac = $_SESSION["ap"];
@@ -17,11 +16,6 @@ if ($method == 'sms') {
 }
 
 $last_updated = date("Y-m-d H:i:s");
-
-require '../vendor/autoload.php';
-
-$dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . "/../");
-$dotenv->load();
 
 $controlleruser = $_SERVER['CONTROLLER_USER'];
 $controllerpassword = $_SERVER['CONTROLLER_PASSWORD'];

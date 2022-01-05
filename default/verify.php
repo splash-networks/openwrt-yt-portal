@@ -1,7 +1,6 @@
 <?php
-session_start();
 
-include '../parameters.php';
+require 'header.php';
 
 $_SESSION['name'] = $_POST['name'];
 
@@ -13,11 +12,6 @@ if (isset($_POST['email'])) {
     $_SESSION['address'] = $_POST['email'];
     $_SESSION['method'] = "email";
 }
-
-require '../vendor/autoload.php';
-
-$dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . "/../");
-$dotenv->load();
 
 $sid = $_SERVER['SID'];
 $token = $_SERVER['TOKEN'];
