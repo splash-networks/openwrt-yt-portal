@@ -30,7 +30,7 @@ $unifi_connection = new UniFi_API\Client($controlleruser, $controllerpassword, $
 $set_debug_mode   = $unifi_connection->set_debug($debug);
 $loginresults     = $unifi_connection->login();
 
-$auth_result = $unifi_connection->authorize_guest($mac, $duration, null, null, null, $ap);
+$auth_result = $unifi_connection->authorize_guest($mac, $duration, null, null, null, $apmac);
 
 mysqli_query($con, "
 CREATE TABLE IF NOT EXISTS `$table_name` (
