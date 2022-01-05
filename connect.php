@@ -16,9 +16,6 @@ if ($method == 'sms') {
     $email = $_SESSION['address'];
 }
 
-echo $method . "\n";
-print_r($_SESSION);
-
 $last_updated = date("Y-m-d H:i:s");
 
 require __DIR__ . '/vendor/autoload.php';
@@ -64,7 +61,11 @@ CREATE TABLE IF NOT EXISTS `$table_name` (
     PRIMARY KEY (`id`)
 )");
 
-mysqli_query($con, "INSERT INTO `$table_name` (phone, email, name, mac, apmac, method, last_updated) VALUES ('$phone','$email','$name','$mac', '$apmac', '$method', '$last_updated')");
+if ($_SESSION['user_type'] == "new") {
+    mysqli_query($con, "INSERT INTO `$table_name` (phone, email, name, mac, apmac, method, last_updated) VALUES ('$phone','$email','$name','$mac', '$apmac', '$method', '$last_updated')");
+} else {
+    mysqli_query($con, "UPDATE `$table_name` SET last_updated = '$last_updated' WHERE mac = '$mac'");
+}
 
 mysqli_close($con);
 

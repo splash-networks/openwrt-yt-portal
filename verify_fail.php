@@ -30,9 +30,9 @@ include 'parameters.php';
 
     <div class="main">
       <seection class="section">
-        <div id="margin_zero" class="content is-size-6">Sorry! The code you entered</div>
-        <div id="margin_zero" class="content is-size-6">is not correct. You'll shortly be</div>
-        <div id="margin_zero" class="content is-size-6">redirected back to our main page</div>
+        <div id="margin_zero" class="content has-text-centered is-size-6">Sorry! The code you entered</div>
+        <div id="margin_zero" class="content has-text-centered is-size-6">is not correct. You'll shortly be</div>
+        <div id="margin_zero" class="content has-text-centered is-size-6">redirected back to our main page</div>
       </seection>
     </div>
 

@@ -65,7 +65,7 @@ $verification = $twilio->verify->v2->services($serviceid)
           <div id="gap" class="content is-size-6"></div>
           <div class="field">
             <div class="control has-icons-left">
-              <input class="input" type="number" name="code" placeholder="Code" required>
+              <input class="input" type="number" name="code" id="code" placeholder="Code" required>
               <span class="icon is-small is-left">
                 <i class="fas fa-comment"></i>
               </span>
@@ -73,7 +73,7 @@ $verification = $twilio->verify->v2->services($serviceid)
           </div>
           <p class="help is-warning" id="codeError">Code Invalid: not a 6 digit number</p>
           <div class="buttons is-centered">
-            <button id="button_font" class="button is-danger">Verify</button>
+            <button id="button_font" class="button is-link">Verify</button>
           </div>
         </form>
       </seection>
