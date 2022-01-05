@@ -7,7 +7,7 @@ This page runs an API request to Twilio to verify the code provided by the user
 
 $_SESSION['code'] = trim($_POST['code']);
 
-require __DIR__ . '../vendor/autoload.php';
+require '../vendor/autoload.php';
 
 $dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . "/../");
 $dotenv->load();

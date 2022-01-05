@@ -18,7 +18,7 @@ if ($method == 'sms') {
 
 $last_updated = date("Y-m-d H:i:s");
 
-require __DIR__ . '../vendor/autoload.php';
+require '../vendor/autoload.php';
 
 $dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . "/../");
 $dotenv->load();
