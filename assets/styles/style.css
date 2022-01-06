@@ -29,7 +29,7 @@
 
 #logo
 {
-  width: 35%;
+  width: 25%;
   margin-left: auto;
   margin-right: auto;
   display: block;
@@ -54,20 +54,18 @@
 /* Media Query for iPads */
 
 @media only screen 
-and (min-device-width : 768px) 
-and (max-device-width : 1024px)
+and (min-width: 600px)
 {
   #logo
   {
-    max-width: 20%;
+    max-width: 10%;
   }
 }
 
 /* Media Query for Desktops */
 
 @media only screen   
-and (min-width: 1030px)   
-and (max-width: 1366px)  
+and (min-width: 768px)
 {
   html
   {

@@ -12,14 +12,14 @@ $twilio = new Client($sid, $token);
 
 if (!isset($_POST['verify'])) {
     $_SESSION['name'] = $_POST['name'];
-
-    if (isset($_POST['phone_number'])) {
-        $phone = $_POST['country_code'] . $_POST['phone_number'];
-        $_SESSION['address'] = trim($phone);
-    }
-    if (isset($_POST['email'])) {
-        $_SESSION['address'] = $_POST['email'];
-        $_SESSION['method'] = "email";
+    $phone = $_POST['country_code'] . $_POST['phone_number'];
+    $_SESSION['phone'] = trim($phone);
+    $_SESSION['email'] = $_POST['email'];
+    $_SESSION['method'] = $_POST['tab_val'];
+    if ($_SESSION['method'] == 'sms') {
+        $_SESSION['address'] = $_SESSION['phone'];
+    } else {
+        $_SESSION['address'] = $_SESSION['email'];
     }
 
     $verification = $twilio->verify->v2->services($serviceid)

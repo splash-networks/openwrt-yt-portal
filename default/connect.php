@@ -7,15 +7,6 @@ $mac = $_SESSION["id"];
 $apmac = $_SESSION["ap"];
 $method = $_SESSION["method"];
 $name = $_SESSION['name'];
-
-if ($method == 'sms') {
-    $phone = $_SESSION['address'];
-    $email = "N/A";
-} else {
-    $phone = "N/A";
-    $email = $_SESSION['address'];
-}
-
 $last_updated = date("Y-m-d H:i:s");
 
 $controlleruser = $_SERVER['CONTROLLER_USER'];
