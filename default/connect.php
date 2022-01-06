@@ -7,6 +7,8 @@ $mac = $_SESSION["id"];
 $apmac = $_SESSION["ap"];
 $method = $_SESSION["method"];
 $name = $_SESSION['name'];
+$phone = $_SESSION['phone'];
+$email = $_SESSION['email'];
 $last_updated = date("Y-m-d H:i:s");
 
 $controlleruser = $_SERVER['CONTROLLER_USER'];
