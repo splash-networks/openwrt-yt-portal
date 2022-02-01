@@ -84,7 +84,7 @@ if (!isset($_POST['verify'])) {
           </div>
           <p class="help is-warning" id="codeError">Code Invalid: not a 6 digit number</p>
           <div class="buttons is-centered">
-            <input class="button is-link" type="submit" name="verify" value="Verify">
+            <input class="button is-dark" type="submit" name="verify" value="Verify">
           </div>
         </form>
       </seection>
