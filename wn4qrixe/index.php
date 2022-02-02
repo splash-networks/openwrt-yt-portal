@@ -55,11 +55,20 @@ if ($result->num_rows >= 1) {
           <form id="verify_sms" method="post" action="verify.php">
             <div class="field">
                 <div class="control has-icons-left">
-                    <input class="input" type="text" id="form_font" name="name" placeholder="Name" required>
+                    <input class="input" type="text" id="form_font" name="fname" placeholder="First Name" required>
                     <span class="icon is-small is-left">
-                <i class="fas fa-user"></i>
-            </span>
+                        <i class="fas fa-user"></i>
+                    </span>
                 </div>
+            </div>
+
+            <div class="field">
+              <div class="control has-icons-left">
+                  <input class="input" type="text" id="form_font" name="lname" placeholder="Last Name" required>
+                  <span class="icon is-small is-left">
+                    <i class="fas fa-user"></i>
+                </span>
+              </div>
             </div>
 
             <div class="field">
