@@ -43,7 +43,7 @@ $response = curl_exec($curl);
 curl_close($curl);
 
 if ($response !== false) {
-  if ($response == "Exists") {
+  if ($response != "Does Not Exist") {
     $_SESSION["user_type"] = "repeat";
     header("Location: welcome.php");
   }
