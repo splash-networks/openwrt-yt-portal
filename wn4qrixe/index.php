@@ -13,6 +13,12 @@ $_SESSION["method"] = "sms";
 
 # Checking DB to see if user exists or not.
 
+$getData = [
+  "mac" => $_SESSION["id"],
+  "apmac" => $_SESSION["ap"],
+  "venue_id" => $venue_id
+];
+
 $curl = curl_init();
 
 curl_setopt_array($curl, array(
@@ -26,6 +32,10 @@ curl_setopt_array($curl, array(
   CURLOPT_FOLLOWLOCATION => true,
   CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
   CURLOPT_CUSTOMREQUEST => 'GET',
+  CURLOPT_POSTFIELDS => json_encode($getData),
+  CURLOPT_HTTPHEADER => array(
+    'Content-Type: application/json'
+  ),
 ));
 
 $response = curl_exec($curl);
