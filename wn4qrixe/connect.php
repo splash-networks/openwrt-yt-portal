@@ -5,9 +5,9 @@ include 'config.php';
 
 $mac = $_SESSION["id"];
 $apmac = $_SESSION["ap"];
-$method = $_SESSION["method"];
+$user_type = $_SESSION["user_type"];
 
-if ($method == "new") {
+if ($user_type == "new") {
   $fname = $_SESSION['fname'];
   $lname = $_SESSION['lname'];
   $phone = $_SESSION['phone'];
@@ -21,14 +21,12 @@ if ($method == "new") {
     "lname" => $lname,
     "email" => $email,
     "phone" => $phone,
-    "method" => $method
   ];
 } else {
   $postData = [
     "mac" => $mac,
     "apmac" => $apmac,
-    "venue_id" => $venue_id,
-    "method" => $method
+    "venue_id" => $venue_id
   ];
 }
 
