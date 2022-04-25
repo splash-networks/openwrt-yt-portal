@@ -6,11 +6,33 @@ include 'config.php';
 $mac = $_SESSION["id"];
 $apmac = $_SESSION["ap"];
 $method = $_SESSION["method"];
-$fname = $_SESSION['fname'];
-$lname = $_SESSION['lname'];
-$phone = $_SESSION['phone'];
-$email = $_SESSION['email'];
-$last_updated = date("Y-m-d H:i:s");
+
+if ($method == "new") {
+  $fname = $_SESSION['fname'];
+  $lname = $_SESSION['lname'];
+  $phone = $_SESSION['phone'];
+  $email = $_SESSION['email'];
+
+  $postData = [
+    "mac" => $mac,
+    "apmac" => $apmac,
+    "venue_id" => $venue_id,
+    "fname" => $fname,
+    "lname" => $lname,
+    "email" => $email,
+    "phone" => $phone,
+    "method" => $method
+  ];
+} else {
+  $postData = [
+    "mac" => $mac,
+    "apmac" => $apmac,
+    "venue_id" => $venue_id,
+    "method" => $method
+  ];
+}
+
+//$last_updated = date("Y-m-d H:i:s");
 
 $controlleruser = $_SERVER['CONTROLLER_USER'];
 $controllerpassword = $_SERVER['CONTROLLER_PASSWORD'];
@@ -26,28 +48,38 @@ $loginresults     = $unifi_connection->login();
 
 $auth_result = $unifi_connection->authorize_guest($mac, $duration, null, null, null, $apmac);
 
-mysqli_query($con, "
-CREATE TABLE IF NOT EXISTS `$table_name` (
-    `id` int(11) NOT NULL AUTO_INCREMENT,
-    `phone` varchar(16) NOT NULL,
-    `email` varchar(45) NOT NULL,
-    `first_name` varchar(100) NOT NULL,
-    `last_name` varchar(100) NOT NULL,
-    `mac` varchar(17) NOT NULL,
-    `apmac` varchar(17) NOT NULL,
-    `method` varchar(10) NOT NULL,
-    `last_updated` datetime NOT NULL,
-    PRIMARY KEY (`id`),
-    UNIQUE KEY `mac` (`mac`)
-)");
+$api_url = "https://backend.nasirhafeez.com/api/captive";
 
-if ($_SESSION['user_type'] == "new") {
-    mysqli_query($con, "INSERT INTO `$table_name` (phone, email, first_name, last_name, mac, apmac, method, last_updated) VALUES ('$phone','$email','$fname','$lname','$mac', '$apmac', '$method', '$last_updated')");
-} else {
-    mysqli_query($con, "UPDATE `$table_name` SET last_updated = '$last_updated' WHERE mac = '$mac'");
+$curl = curl_init();
+
+curl_setopt_array($curl, array(
+  CURLOPT_URL => $api_url,
+  CURLOPT_RETURNTRANSFER => true,
+  CURLOPT_ENCODING => '',
+  CURLOPT_MAXREDIRS => 10,
+  CURLOPT_TIMEOUT => 0,
+  CURLOPT_SSL_VERIFYPEER => false,
+  CURLOPT_SSL_VERIFYHOST => false,
+  CURLOPT_FOLLOWLOCATION => true,
+  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+  CURLOPT_CUSTOMREQUEST => 'POST',
+  CURLOPT_POSTFIELDS => json_encode($postData),
+  CURLOPT_HTTPHEADER => array(
+    'Content-Type: application/json'
+  ),
+));
+
+$response = curl_exec($curl);
+
+curl_close($curl);
+
+if ($response !== false) {
+//  $json = json_decode($response, true);
+//  print_r($json);
 }
-
-mysqli_close($con);
+else {
+  die("Error: check with your network administrator");
+}
 
 ?>
 <!DOCTYPE HTML>
@@ -84,5 +116,4 @@ mysqli_close($con);
 
 </div>
 </body>
-
 </html>

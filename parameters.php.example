@@ -9,4 +9,10 @@ $site_id = "";
 #Friendly name
 $business_name = "";
 
+#Venue ID for this venue
+$venue_id = "";
+
+#API URL
+$api_url = "";
+
 ?>
