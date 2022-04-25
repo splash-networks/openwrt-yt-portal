@@ -70,8 +70,8 @@ $response = curl_exec($curl);
 curl_close($curl);
 
 if ($response !== false) {
-  $json = json_decode($response);
-  print_r($json);
+//  $json = json_decode($response);
+//  print_r($json);
 }
 else {
   die("Error: check with your network administrator");
