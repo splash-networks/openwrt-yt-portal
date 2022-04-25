@@ -14,7 +14,7 @@ $target = "https://backend.nasirhafeez.com/api/captive";
 
 $postData = [
   "mac" => $mac,
-  "ap" => $apmac,
+  "apmac" => $apmac,
   "venue_id" => $venue_id,
   "fname" => $fname,
   "lname" => $lname,
@@ -47,7 +47,7 @@ $response = curl_exec($curl);
 curl_close($curl);
 
 if ($response !== false) {
-  $json = json_decode($response, true);
+  $json = json_decode($response);
   print_r($json);
 //  if ($json['errorCode'] == 0) {
 //    echo "Success!";

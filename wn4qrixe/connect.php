@@ -48,8 +48,6 @@ $loginresults     = $unifi_connection->login();
 
 $auth_result = $unifi_connection->authorize_guest($mac, $duration, null, null, null, $apmac);
 
-$api_url = "https://backend.nasirhafeez.com/api/captive";
-
 $curl = curl_init();
 
 curl_setopt_array($curl, array(
