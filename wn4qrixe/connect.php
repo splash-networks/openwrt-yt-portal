@@ -1,11 +1,16 @@
 <?php
 
 require 'header.php';
-include 'config.php';
 
 $mac = $_SESSION["id"];
 $apmac = $_SESSION["ap"];
 $user_type = $_SESSION["user_type"];
+
+if ($_SESSION['method'] == 'sms') {
+    $email_verified = 0;
+} else {
+  $email_verified = 1;
+}
 
 if ($user_type == "new") {
   $fname = $_SESSION['fname'];
@@ -20,6 +25,7 @@ if ($user_type == "new") {
     "fname" => $fname,
     "lname" => $lname,
     "email" => $email,
+    "email_verified" => $email_verified,
     "phone" => $phone,
   ];
 } else {
@@ -29,8 +35,6 @@ if ($user_type == "new") {
     "venue_id" => $venue_id
   ];
 }
-
-//$last_updated = date("Y-m-d H:i:s");
 
 $controlleruser = $_SERVER['CONTROLLER_USER'];
 $controllerpassword = $_SERVER['CONTROLLER_PASSWORD'];

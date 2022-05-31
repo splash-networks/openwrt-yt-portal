@@ -1,7 +1,6 @@
 <?php
 
 require 'header.php';
-include 'config.php';
 
 if (!isset($_SESSION['id'])) {
   $_SESSION["id"] = $_GET['id'];
