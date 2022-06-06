@@ -357,7 +357,7 @@ else {
             </span>
                         </p>
                         <p class="control">
-                            <input class="input" type="tel" id="phone_number" name="phone_number" placeholder="Phone Number" minlength="8" maxlength="15" required>
+                            <input class="input" type="tel" id="phone_number" name="phone_number" placeholder="Phone Number" pattern="[0-9]{10}" required>
                         </p>
                     </div>
                     <div id="login" class="content is-size-5 has-text-centered has-text-weight-bold">Receive verification code via:</div>
@@ -412,8 +412,21 @@ else {
         sms_tab.classList.remove('is-active');
         tab_value.value = 'email'
     }
+  
+    // Phone number validation
+
+    const input = document.querySelector('input[name="phone_number"]');
+
+    input.addEventListener('invalid', function (event) {
+        if (event.target.validity.patternMismatch) {
+            event.target.setCustomValidity(`You entered an incorrect number. Please enter a phone number of 10 digits, without spaces or special characters`);
+        }
+    })
+
+    input.addEventListener('change', function (event) {
+        event.target.setCustomValidity('');
+    })
 </script>
 
 </body>
-
 </html>
