@@ -5,7 +5,7 @@ include 'config.php';
 
 $mac = $_SESSION["mac"];
 $ip = $_SESSION["ip"];
-$linkorig = "https://www.google.com";
+$linkorig = "https://hotspot.uk.connect.airbytes.net/thanks.php";
 $linkloginonly = $_SESSION["linkloginonly"];
 
 $last_updated = date("Y-m-d H:i:s");
