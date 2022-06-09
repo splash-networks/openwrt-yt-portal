@@ -39,26 +39,33 @@ mysqli_close($con);
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Astiisb WiFi</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-    <link rel="stylesheet" href="bulma.min.css" />
-    <script defer src="fontawesome-free-5.3.1-web\js\all.js"></script>
-    <link rel="icon" type="image/png" href="favicomatic\favicon-32x32.png" sizes="32x32" />
-    <link rel="icon" type="image/png" href="favicomatic\favicon-16x16.png" sizes="16x16" />
-    <link rel="stylesheet" href="style.css" />
+    <title>
+      <?php echo htmlspecialchars($business_name); ?> WiFi</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <link rel="stylesheet" href="assets/styles/bulma.min.css"/>
+    <link rel="stylesheet" href="vendor/fortawesome/font-awesome/css/all.css"/>
+    <link rel="icon" type="image/png" href="assets/images/favicomatic/favicon-32x32.png" sizes="32x32"/>
+    <link rel="icon" type="image/png" href="assets/images/favicomatic/favicon-16x16.png" sizes="16x16"/>
+    <link rel="stylesheet" href="assets/styles/style.css"/>
 </head>
 <body>
-<div class="bg">
+<div class="page">
 
-    <figure id="logo">
-        <img src="logo.png">
-    </figure>
+    <div class="head">
+        <br>
+        <figure id="logo">
+            <img src="assets/images/logo.png">
+        </figure>
+    </div>
 
-    <div id="handle" class="content is-size-6">Please wait, you are being </div>
-    <div id="devices" class="content is-size-6">authorized on WiFi</div>
-
-    <div id="powered_handle" class="content is-size-6">Powered by Astiisb</div>
-    <div id="copyright" class="content is-size-6">(C) Copyright 2020</div>
+    <div class="main">
+        <seection class="section">
+            <div class="container">
+                <div id="margin_zero" class="content has-text-centered is-size-6">Please wait, you are being</div>
+                <div id="margin_zero" class="content has-text-centered is-size-6">authorized on the network</div>
+            </div>
+        </seection>
+    </div>
 
 </div>
 
