@@ -1,8 +1,6 @@
 {
     "require": {
         "fortawesome/font-awesome": "^5.3",
-        "twilio/sdk": "^6.6",
-        "vlucas/phpdotenv": "^5",
-        "art-of-wifi/unifi-api-client": "^1.1"
+        "vlucas/phpdotenv": "^5"
     }
 }
