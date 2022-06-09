@@ -1,15 +1,9 @@
 <?php
 
-#Unifi Site ID for this site
-$site_id = "";
-
 #Friendly name
 $business_name = "";
 
-#Venue ID for this venue
-$venue_id = "";
-
-#API URL
-$api_url = "";
+#MySQL DB table name for this site
+$table_name = "";
 
 ?>
