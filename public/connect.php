@@ -26,7 +26,7 @@ if ($_SESSION["user_type"] == "new") {
     `mac` varchar(45) NOT NULL,
     `ip` varchar(45) NOT NULL,
     `last_updated` varchar(45) NOT NULL,
-    PRIMARY KEY (`id`),
+    PRIMARY KEY (`id`)
     )");
 
     mysqli_query($con,"INSERT INTO `$table_name` (firstname, lastname, email, mac, ip, last_updated) VALUES ('$fname', '$lname', '$email', '$mac', '$ip', '$last_updated')");
