@@ -56,7 +56,7 @@ and (min-width: 600px)
 {
   #logo
   {
-    max-width: 10%;
+    max-width: 40%;
   }
 }
 
@@ -71,7 +71,7 @@ and (min-width: 768px)
 
   #logo
   {
-    max-width: 10%;
+    max-width: 30%;
   }
 
   .main
