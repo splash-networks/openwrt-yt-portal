@@ -54,7 +54,7 @@
     <div class="main">
         <section class="section">
             <div class="container">
-                <div id="login" class="content is-size-5 has-text-centered has-text-weight-bold">Enter your details
+                <div id="contact_form" class="content is-size-5 has-text-centered has-text-weight-bold">Enter your details
                 </div>
                 <form method="post" action="connect.php">
                     <div class="field">

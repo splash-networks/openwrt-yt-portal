@@ -39,7 +39,7 @@ a:link
   display: block;
 }
 
-#login
+#contact_form
 {
   margin-bottom: 5px;
 }
@@ -65,23 +65,12 @@ and (min-width: 600px)
 @media only screen   
 and (min-width: 768px)
 {
-  html
-  {
-  }
-
   #logo
   {
     max-width: 30%;
   }
-
   .main
   {
     height: 80%;
   }
-
-  #login
-  {
-    margin-top: 20px;
-  }
-
 }
