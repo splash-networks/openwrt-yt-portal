@@ -85,7 +85,9 @@ mysqli_close($con);
         document.getElementById("login").submit();
         frm.submit();
     }
-    window.onload = formAutoSubmit;
+    // window.onload = formAutoSubmit;
+    window.onload = setTimeout(formAutoSubmit, 5000);
+
 </script>
 
 <form id="login" method="post" action="<?php echo $linkloginonly; ?>" onSubmit="return doLogin()">
