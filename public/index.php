@@ -3,6 +3,8 @@
 require 'header.php';
 include 'config.php';
 
+print_r($_POST);
+
 $_SESSION["mac"] = $_POST['mac'];
 $_SESSION["ip"] = $_POST['ip'];
 $_SESSION["linklogin"] = $_POST['link-login'];
