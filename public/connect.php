@@ -5,6 +5,7 @@ include 'config.php';
 
 $mac = $_SESSION["mac"];
 $ip = $_SESSION["ip"];
+$linklogin = $_SESSION["linklogin"];
 $linkorig = "https://hotspot.uk.connect.airbytes.net/thanks.php";
 
 $last_updated = date("Y-m-d H:i:s");
@@ -89,7 +90,7 @@ mysqli_close($con);
 
 </script>
 
-<form id="login" method="post" action="<?php echo $linkloginonly; ?>" onSubmit="return doLogin()">
+<form id="login" method="post" action="<?php echo $linklogin; ?>" onSubmit="return doLogin()">
     <input name="dst" type="hidden" value="<?php echo $linkorig; ?>" />
     <input name="popup" type="hidden" value="false" />
     <input name="username" type="hidden" value="<?php echo $username; ?>"/>

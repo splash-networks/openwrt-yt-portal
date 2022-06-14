@@ -5,10 +5,9 @@ include 'config.php';
 
 print_r($_POST);
 
-/*
 $_SESSION["mac"] = $_POST['mac'];
 $_SESSION["ip"] = $_POST['ip'];
-$_SESSION["linkorig"] = $_POST['link-orig'];
+$_SESSION["linklogin"] = $_POST['link-login'];
 
 $_SESSION["user_type"] = "new";
 
@@ -103,4 +102,3 @@ if ($result->num_rows >= 1) {
 </div>
 </body>
 </html>
-*/
