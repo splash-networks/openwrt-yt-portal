@@ -3,10 +3,12 @@
 require 'header.php';
 include 'config.php';
 
+print_r($_GET);
+
+/*
 $_SESSION["mac"] = $_POST['mac'];
 $_SESSION["ip"] = $_POST['ip'];
 $_SESSION["linkorig"] = $_POST['link-orig'];
-$_SESSION["linkloginonly"] = $_POST['link-login-only'];
 
 $_SESSION["user_type"] = "new";
 
@@ -101,3 +103,4 @@ if ($result->num_rows >= 1) {
 </div>
 </body>
 </html>
+*/
