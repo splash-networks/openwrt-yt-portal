@@ -10,4 +10,4 @@ Rename the `parameters.php.example` file to `parameters.php` and set the values 
 
 *Install Composer*
 
-Then run `php composer.phar install` to install the packages given in `composer.json`.
+Navigate to public folder and install [composer](https://getcomposer.org/download/). Then run `php composer.phar install` to install the packages given in `composer.json`.
