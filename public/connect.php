@@ -9,7 +9,6 @@ $link_login = $_SESSION["link-login"];
 $link_login_only = $_SESSION["link-login-only"];
 $linkorig = "https://hotspot.uk.connect.airbytes.net/thanks.php";
 
-
 $last_updated = date("Y-m-d H:i:s");
 
 $username="admin";

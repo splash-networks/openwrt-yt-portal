@@ -1,9 +1,0 @@
-<?php
-
-#Friendly name
-$business_name = "";
-
-#MySQL DB table name for this site
-$table_name = "";
-
-?>
