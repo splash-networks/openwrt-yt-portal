@@ -12,6 +12,7 @@ $_SESSION["user_type"] = "new";
 
 # Checking DB to see if user exists or not.
 
+mysqli_report(MYSQLI_REPORT_OFF);
 $result = mysqli_query($con, "SELECT * FROM `$table_name` WHERE mac='$_SESSION[mac]'");
 
 if ($result->num_rows >= 1) {
