@@ -79,16 +79,6 @@ mysqli_close($con);
         return false;
     }
 </script>
-<script type="text/javascript">
-    function formAutoSubmit () {
-        var frm = document.getElementById("login");
-        document.getElementById("login").submit();
-        frm.submit();
-    }
-    // window.onload = formAutoSubmit;
-    window.onload = setTimeout(formAutoSubmit, 2500);
-
-</script>
 
 <form id="login" method="post" action="<?php echo $link_login_only; ?>" onSubmit="return doLogin()">
     <input name="dst" type="hidden" value="<?php echo $linkorig; ?>" />
