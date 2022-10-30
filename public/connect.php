@@ -70,7 +70,6 @@ mysqli_close($con);
 
 </div>
 
-<script type="text/javascript" src="./md5.js"></script>
 <script type="text/javascript">
     function doLogin() {
         document.sendin.username.value = document.login.username.value;
@@ -78,6 +77,16 @@ mysqli_close($con);
         document.sendin.submit();
         return false;
     }
+</script>
+<script type="text/javascript">
+    function formAutoSubmit () {
+        var frm = document.getElementById("login");
+        document.getElementById("login").submit();
+        frm.submit();
+    }
+    // window.onload = formAutoSubmit;
+    window.onload = setTimeout(formAutoSubmit, 2500);
+
 </script>
 
 <form id="login" method="post" action="<?php echo $link_login_only; ?>" onSubmit="return doLogin()">
