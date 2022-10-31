@@ -35,3 +35,7 @@ The portal files are in public folder in this repository. DocumentRoot will be:
 `/var/www/hotspot.example.com/public`
 
 It has been successfully tested with `RouterOS v7.4.1`
+
+## Mikrotik Hotspot Login file
+
+Add your domain to `login.html` in action field and upload it to Mikrotik router in Files => Hotspot folder.
