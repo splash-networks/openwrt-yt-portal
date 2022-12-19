@@ -50,7 +50,7 @@ if ($_SESSION["user_type"] == "new") {
     `firstname` varchar(45) NOT NULL,
     `lastname` varchar(45) NOT NULL,
     `email` varchar(45) NOT NULL,
-    `mac` varchar(45) NOT NULL
+    `mac` varchar(45) NOT NULL,
     `last_updated` varchar(45) NOT NULL,
     PRIMARY KEY (`id`)
     )");
