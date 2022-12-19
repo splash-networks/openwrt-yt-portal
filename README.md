@@ -1,4 +1,4 @@
-# Mikrotik External Captive Portal
+# OpenWRT Coova Chilli External Captive Portal
 
 The following actions are required to use the code given in this repo:
 
@@ -8,8 +8,8 @@ Suppose your domain is `hotspot.example.com`. It can be setup like this:
 
 ```
 cd /var/www
-git clone https://github.com/nasirhafeez/mikrotik-yt-portal
-mv mikrotik-yt-portal hotspot.example.com
+git clone https://github.com/nasirhafeez/openwrt-yt-portal
+mv openwrt-yt-portal hotspot.example.com
 cd /var/www/hotspot.example.com
 ```
 
@@ -33,9 +33,3 @@ Apache virtual host can be setup on the portal server using the instructions giv
 The portal files are in public folder in this repository. DocumentRoot will be:
 
 `/var/www/hotspot.example.com/public`
-
-It has been successfully tested with `RouterOS v7.4.1`
-
-## Mikrotik Hotspot Login file
-
-Add your domain to `login.html` in action field and upload it to Mikrotik router in Files => Hotspot folder.

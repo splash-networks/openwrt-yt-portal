@@ -3,11 +3,13 @@
 require 'header.php';
 include 'config.php';
 
-$_SESSION["mac"] = $_POST['mac'];
-$_SESSION["ip"] = $_POST['ip'];
-$_SESSION["link-login"] = $_POST['link-login'];
-$_SESSION["link-login-only"] = $_POST['link-login-only'];
+$res = $_GET["res"];
 
+$_SESSION["mac"] = $_GET["mac"];
+$_SESSION["challenge"] = $_GET["challenge"];
+$_SESSION["uamip"] = $_GET["uamip"];
+$_SESSION["uamport"] = $_GET["uamport"];
+$_SESSION["userurl"] = $_GET["userurl"];
 $_SESSION["user_type"] = "new";
 
 # Checking DB to see if user exists or not.
@@ -43,6 +45,9 @@ if ($result->num_rows >= 1) {
 </head>
 
 <body>
+<?php
+    if ($res === "notyet") {
+?>
 <div class="page">
 
     <div class="head">
@@ -100,5 +105,18 @@ if ($result->num_rows >= 1) {
         </section>
     </div>
 </div>
+<?php
+    } else if ($res === "success") {
+      header("Location: $redirect_url");
+    } else if ($res === "failed") {
+      echo "<h2>Sorry, failed to authenticate</h2>";
+    } else if ($res === "logoff") {
+      echo "<h2>Logging off...</h2>";
+    } else if ($res === "already") {
+      header("Location: $redirect_url");
+    } else {
+      echo "<h2>Error: Permission Denied</h2>";
+    }
+?>
 </body>
 </html>
