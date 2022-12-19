@@ -72,8 +72,6 @@ $uam_redirect_url = "http://$uamip:$uamport/logon?" .
   "username=" . urlencode($username) .
   "&response=" . urlencode($encoded_password);
 
-//header('Location: ' . $uam_redirect_url);
-
 ?>
 <!DOCTYPE HTML>
 <html>
